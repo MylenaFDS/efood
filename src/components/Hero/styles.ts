@@ -3,7 +3,7 @@ import { cores } from '../../styles';
 
 export const HeroContainer = styled.div`
   position: absolute;
-  width: 2031.81px;
+  width: 100%;
   height: 384px;
   left: 0px;
   top: -24px;
@@ -36,4 +36,11 @@ export const Logo = styled.img`
   top: 40px;
 
   background: ${cores.coral};
+`;
+export const Fundo = styled.img`
+position: absolute;
+width: 100%;
+height: 100%;
+left: 0px;
+top: -24px;
 `;
