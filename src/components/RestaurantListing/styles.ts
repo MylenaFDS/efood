@@ -5,8 +5,6 @@ export const ListingContainer = styled.div`
   position: absolute;
   width: 1024px;
   height: 1290px;
-  
-  
 `;
 
 export const Restaurant = styled.div`
@@ -15,7 +13,6 @@ export const Restaurant = styled.div`
   height: 398px;
   background-color: ${cores.branca};
   border: 1px solid ${cores.coral};
-  border-radius: 8px;
 `;
 
 export const Highlight = styled.span`
@@ -23,7 +20,7 @@ export const Highlight = styled.span`
   padding:5px;
   width: 150px;
   height: 26px;
-  left: 16px;
+  left: 210px;
   top: 16px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -38,7 +35,7 @@ export const Tag = styled.div`
   padding:5px;
   width: 75px;
   height: 26px;
-  left: 350px;
+  left: 370px;
   top: 16px;
   background-color: ${cores.coral};
   color: ${cores.creme};
@@ -53,7 +50,7 @@ export const Tag = styled.div`
 
 export const RestaurantTitle = styled.h2`
   position: absolute;
-  width: 92px;
+  width: auto; /* Ajuste a largura para se adaptar ao conteúdo */
   height: 21px;
   left: 8px;
   top: 225px;
@@ -62,10 +59,15 @@ export const RestaurantTitle = styled.h2`
   font-size: 18px;
   line-height: 21px;
   color: ${cores.coral};
+  white-space: nowrap; /* Impede a quebra de linha */
+  overflow: hidden; /* Opcional: esconde o texto que ultrapassa a largura */
+  text-overflow: ellipsis; /* Opcional: adiciona "..." no final do texto, se necessário */
 `;
 
+
 export const RestaurantDescription = styled.p`
-  position: absolute;
+position: absolute;
+  
   width: 456px;
   height: 88px;
   left: 8px;
@@ -74,5 +76,4 @@ export const RestaurantDescription = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
-  color: ${cores.coral};
-`;
+  color: ${cores.coral}`;
