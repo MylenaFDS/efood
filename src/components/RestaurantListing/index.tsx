@@ -1,12 +1,5 @@
 import React from 'react';
-import { 
-  ListingContainer, 
-  Restaurant, 
-  RestaurantTitle, 
-  RestaurantDescription, 
-  Highlight, 
-  Tag 
-} from './styles';
+import {ListingContainer, Restaurant, RestaurantTitle, RestaurantDescription, Highlight, Tag, SaibaMaisButton} from './styles';
 import HiokiSushi from '../../assets/images/HiokiSushi.svg';
 import LaDolceVitaTrattoria from '../../assets/images/LaDolceVitaTrattoria.svg';
 import SaboresDaTerra from '../../assets/images/SaboresDaTerra.jpg';
@@ -75,6 +68,7 @@ const RestaurantListing: React.FC = () => (
         <img src={restaurant.image} alt={restaurant.name} style={{ width: '470px', height: '217px' }} />
         <RestaurantTitle>{restaurant.name}</RestaurantTitle>
         <RestaurantDescription>{restaurant.description}</RestaurantDescription>
+        <SaibaMaisButton>Saiba mais</SaibaMaisButton>
       </Restaurant>
     ))}
   </ListingContainer>

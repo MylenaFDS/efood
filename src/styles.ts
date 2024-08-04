@@ -4,9 +4,7 @@ export const cores = {
   coral:'#E66767',
   branca: '#FFF8F2',
   creme: '#FFEBD9',
-  cinza: '#333',
-  verde: '#10AC84',
-  cinzaClaro: '#A3A3A3'
+  coralDark:'#CD5B45'
 }
 
 export const GlobalCss = createGlobalStyle`
