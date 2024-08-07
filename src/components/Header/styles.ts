@@ -3,7 +3,7 @@ import { cores } from '../../styles'
 
 export const HeaderContainer = styled.div`
 /* Header */
-
+display:flex;
 position: absolute;
 width: 2031.81px;
 height: 186px;
@@ -31,7 +31,7 @@ export const Logo = styled.img`
   background: ${cores.coral};
 `;
 
-export const TermRestaurants = styled.text`
+export const LinkRestaurants = styled.li`
 /* Restaurantes */
 
 position: absolute;

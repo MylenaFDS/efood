@@ -20,7 +20,12 @@ const RestaurantListing: React.FC = () => (
         <RestaurantTitle>{restaurant.name}</RestaurantTitle>
         <RestaurantDescription>{restaurant.description}</RestaurantDescription>
         
-        <Button>Saiba mais</Button>
+        <Button 
+        type='link' 
+        title='Saiba mais'
+        to='/restaurant'>
+          Saiba mais
+        </Button>
       </Restaurant>
     ))}
   </ListingContainer>
