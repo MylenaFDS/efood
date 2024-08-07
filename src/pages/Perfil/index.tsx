@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../../components/Header';
 import { useParams } from 'react-router-dom';
 import { RestaurantDetailsContainer, RestaurantImage, RestaurantTitle, RestaurantDescription, RestaurantTag } from '../../components/Restaurant/styles';
 import { restaurants } from '../../data/restaurants'; // Ajuste o caminho conforme necessário
@@ -17,12 +18,12 @@ const Perfil: React.FC = () => {
   }
 
   return (
-    <RestaurantDetailsContainer>
+  <><Header /><RestaurantDetailsContainer>
       <RestaurantImage src={restaurant.image} alt={restaurant.name} />
       <RestaurantTitle>{restaurant.name}</RestaurantTitle>
       <RestaurantTag>{restaurant.tag}</RestaurantTag>
       <RestaurantDescription>{restaurant.description}</RestaurantDescription>
-    </RestaurantDetailsContainer>
+    </RestaurantDetailsContainer></>
   );
 };
 

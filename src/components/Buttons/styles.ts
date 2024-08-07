@@ -15,7 +15,7 @@ export const ButtonContainer = styled.button`
   border: none;
   cursor: pointer;
   font-size: 14px;
-  
+  font-family:Roboto
 &:hover {
     background-color: ${cores.coralDark}; /* Cor mais escura para hover */
 }
@@ -31,6 +31,7 @@ background-color: ${cores.coral};
 color: white;
 border: none;
 cursor: pointer;
+font-family:Roboto
 font-size: 14px;
 text-decoration:none;
 
