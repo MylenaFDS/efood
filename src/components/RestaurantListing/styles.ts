@@ -5,6 +5,8 @@ export const ListingContainer = styled.div`
   position: absolute;
   width: 1024px;
   height: 1290px;
+  left:0;
+  right:0;
 `;
 
 export const Restaurant = styled.div`
