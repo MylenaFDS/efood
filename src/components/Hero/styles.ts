@@ -12,7 +12,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroText = styled.h1`
-  position: relative;
+  position: absolute;
   width: 539px;
   height: 84px;
   
@@ -29,16 +29,16 @@ export const HeroText = styled.h1`
 `;
 
 export const Logo = styled.img`
-  position: relative;
+  position: absolute;
   width: 125px;
   height: 57.5px;
-  left: 621px;
+  left: 321px;
   top: 40px;
 
   background: ${cores.coral};
 `;
 export const Fundo = styled.img`
-position: relative;
+position: absolute;
 width: 100%;
 height: 100%;
 left: 0px;
