@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { cores } from '../../styles';
 
 export const HeroContainer = styled.div`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 384px;
   left: 0px;
