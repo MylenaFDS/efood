@@ -18,7 +18,7 @@ font-size: 36px;
 max-width: 539px;
 text-align: center;
 margin-bottom: 40px;
-
+margin-top:230px;
 
   color: ${cores.coral};
 `;
