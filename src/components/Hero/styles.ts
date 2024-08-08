@@ -3,6 +3,7 @@ import { cores } from '../../styles';
 
 export const HeroContainer = styled.div`
   position: absolute;
+  max-width:1024px
   width: 100%;
   height: 384px;
   left: 0px;
