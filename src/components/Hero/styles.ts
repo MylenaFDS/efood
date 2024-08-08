@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { cores } from '../../styles';
+import Vector from '../../assets/images/Vector.svg'
 
 export const HeroContainer = styled.div`
   position: absolute;
@@ -9,13 +10,14 @@ export const HeroContainer = styled.div`
   top: -24px;
   background: ${cores.creme};
   object-fit:cover;
+  background-image: url(${Vector});
 `;
 
 export const HeroText = styled.h1`
   position: absolute;
   width: 539px;
   height: 84px;
-  
+  margin-left:400px;
   top: 236px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -30,16 +32,9 @@ export const Logo = styled.img`
   position: absolute;
   width: 125px;
   height: 57.5px;
-  left: 321px;
-  right:321px;
+  margin-left:600px;
+  
   top: 40px;
   background: ${cores.coral};
 `;
 
-export const Fundo = styled.img`
-position: absolute;
-width: 100%;
-height: 100%;
-left: 0px;
-top: -24px;
-`;
