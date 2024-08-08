@@ -17,14 +17,12 @@ export const HeroText = styled.h1`
   height: 84px;
   
   top: 236px;
-
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 36px;
   line-height: 42px;
   text-align: center;
-
   color: ${cores.coral};
 `;
 
@@ -35,9 +33,9 @@ export const Logo = styled.img`
   left: 321px;
   right:321px;
   top: 40px;
-
   background: ${cores.coral};
 `;
+
 export const Fundo = styled.img`
 position: absolute;
 width: 100%;
