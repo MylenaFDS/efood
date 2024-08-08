@@ -7,6 +7,7 @@ export const HeroContainer = styled.div`
   width: 100%;
   height: 384px;
   left: 0px;
+  right:0px;
   top: -24px;
   background: ${cores.creme};
   object-fit:cover;
