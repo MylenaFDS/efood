@@ -15,7 +15,7 @@ export const HeroText = styled.h1`
   position: absolute;
   width: 539px;
   height: 84px;
-  left: 214px;
+  left: 414px;
   top: 236px;
 
   font-family: 'Roboto', sans-serif;
