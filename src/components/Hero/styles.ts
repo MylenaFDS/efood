@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { cores } from '../../styles';
 
 export const HeroContainer = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 384px;
   left: 0px;
@@ -15,7 +15,7 @@ export const HeroText = styled.h1`
   position: absolute;
   width: 539px;
   height: 84px;
-  left: 414px;
+  left: 214px;
   top: 236px;
 
   font-family: 'Roboto', sans-serif;
