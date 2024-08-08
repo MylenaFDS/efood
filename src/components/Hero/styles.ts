@@ -3,7 +3,6 @@ import { cores } from '../../styles';
 
 export const HeroContainer = styled.div`
   position: absolute;
-  max-width:1024px;
   width: 100%;
   height: 384px;
   left: 0px;
@@ -13,13 +12,19 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroText = styled.h1`
-font-weight: bold;
-font-size: 36px;
-max-width: 539px;
-text-align: center;
-margin-bottom: 40px;
-margin-top:230px;
-align-items:center;
+  position: absolute;
+  width: 539px;
+  height: 84px;
+  
+  top: 236px;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+
   color: ${cores.coral};
 `;
 
