@@ -33,6 +33,7 @@ export const Logo = styled.img`
   width: 125px;
   height: 57.5px;
   left: 321px;
+  right:321px;
   top: 40px;
 
   background: ${cores.coral};
