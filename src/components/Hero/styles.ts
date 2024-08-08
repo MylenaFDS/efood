@@ -4,6 +4,7 @@ import Vector from '../../assets/images/Vector.svg'
 
 export const HeroContainer = styled.div`
   position: absolute;
+  max-width:2032px;
   width: 100%;
   height: 384px;
   left: 0px;
