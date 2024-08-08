@@ -3,10 +3,9 @@ import { cores } from '../../styles';
 
 export const ListingContainer = styled.div`
   position: absolute;
-  width: 1024px;
+  width: 100%;
   height: 1290px;
-  left:0;
-  right:0;
+  right:100px;
 `;
 
 export const Restaurant = styled.div`
