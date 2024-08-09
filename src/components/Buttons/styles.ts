@@ -16,8 +16,6 @@ export const ButtonContainer = styled.button`
   cursor: pointer;
   font-size: 14px;
   font-family:Roboto
-  padding:5px;
-  text-align:center;
 &:hover {
     background-color: ${cores.coralDark}; /* Cor mais escura para hover */
 }
