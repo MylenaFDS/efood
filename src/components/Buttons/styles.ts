@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 // Defina o estilo do botão
 export const ButtonContainer = styled.button`
   position: relative;
-  width: 82px;
-  height: 24px;
+  width: 90px;
+  height: 30px;
   left: 8px;  /* Ajuste conforme necessário */
   margin-top: 240px;  /* Ajuste conforme necessário */
   background-color: ${cores.coral};
@@ -16,6 +16,8 @@ export const ButtonContainer = styled.button`
   cursor: pointer;
   font-size: 14px;
   font-family:Roboto
+  padding:5px;
+  text-align:center;
 &:hover {
     background-color: ${cores.coralDark}; /* Cor mais escura para hover */
 }
@@ -23,8 +25,8 @@ export const ButtonContainer = styled.button`
 
 export const ButtonLink = styled(Link)`
 position: absolute;
-width: 82px;
-height: 24px;
+width: 90px;
+height: 30px;
 left: 8px;  /* Ajuste conforme necessário */
 margin-top: 140px;  /* Ajuste conforme necessário */
 background-color: ${cores.coral};
@@ -33,6 +35,8 @@ border: none;
 cursor: pointer;
 font-family:Roboto
 font-size: 14px;
+padding:5px;
+text-align:center;
 text-decoration:none;
 
 &:hover {
