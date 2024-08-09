@@ -9,7 +9,7 @@ export const ButtonContainer = styled.button`
   width: 82px;
   height: 24px;
   left: 8px;  /* Ajuste conforme necessário */
-  margin-top: 140px;  /* Ajuste conforme necessário */
+  margin-top: 240px;  /* Ajuste conforme necessário */
   background-color: ${cores.coral};
   color: white;
   border: none;
