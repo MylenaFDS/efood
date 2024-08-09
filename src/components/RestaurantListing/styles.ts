@@ -4,7 +4,7 @@ import { cores } from '../../styles';
 export const ListingContainer = styled.div`
   position: absolute;
   width: 100%;
-  height: 1290px;
+  height: 100%;
   right:170px;
   top:0;
 `;
