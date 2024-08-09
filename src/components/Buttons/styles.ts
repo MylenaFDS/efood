@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 // Defina o estilo do botão
 export const ButtonContainer = styled.button`
-  position: absolute;
+  position: relative;
   width: 82px;
   height: 24px;
   left: 8px;  /* Ajuste conforme necessário */
@@ -22,7 +22,7 @@ export const ButtonContainer = styled.button`
 `;
 
 export const ButtonLink = styled(Link)`
-position: relative;
+position: absolute;
 width: 82px;
 height: 24px;
 left: 8px;  /* Ajuste conforme necessário */
