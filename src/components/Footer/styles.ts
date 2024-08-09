@@ -18,7 +18,7 @@ export const Logo = styled.img`
   position: absolute;
   width: 125px;
   height: 57.5px;
-  left: 400px;
+  left: 450px;
   top: 40px; // Ajuste conforme necessário
 `;
 
@@ -26,7 +26,7 @@ export const SocialMedia = styled.img`
   position: absolute;
   width: 88px;
   height: 24px;
-  left: 420px;
+  left: 465px;
   top: 130px; // Ajuste conforme necessário
 `;
 
@@ -34,8 +34,8 @@ export const Disclaimer = styled.p`
   position: absolute;
   width: 480px;
   height: 24px;
-  left: 244px;
-  top: 230px; // Ajuste conforme necessário
+  left: 290px;
+  top: 200px; // Ajuste conforme necessário
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;

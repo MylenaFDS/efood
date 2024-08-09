@@ -19,7 +19,7 @@ export const HeroText = styled.h1`
   position: absolute;
   width: 539px;
   height: 84px;
-  margin-left:200px;
+  margin-left:250px;
   top: 236px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -34,7 +34,7 @@ export const Logo = styled.img`
   position: absolute;
   width: 125px;
   height: 57.5px;
-  margin-left:400px;
+  margin-left:450px;
   
   top: 40px;
   background: ${cores.coral};
