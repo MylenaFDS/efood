@@ -22,7 +22,7 @@ export const ButtonContainer = styled.button`
 `;
 
 export const ButtonLink = styled(Link)`
-position: absolute;
+position: relative;
 width: 90px;
 height: 30px;
 left: 8px;  /* Ajuste conforme necessário */
