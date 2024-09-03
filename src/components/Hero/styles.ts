@@ -3,17 +3,17 @@ import { cores } from '../../styles';
 import Vector from '../../assets/images/Vector.svg'
 
 export const HeroContainer = styled.div`
-  position: absolute;
-  max-width:2032px;
-  width: 100%;
-  height: 384px;
-  left: 0px;
-  right:0px;
-  top: -24px;
+position:absolute;
+max-width: 2031.81px;
+width:100%;
+height: 384px;
+top: -24px;
+
   background: ${cores.creme};
   object-fit:cover;
   background-image: url(${Vector});
 `;
+
 
 export const HeroText = styled.h1`
   position: absolute;

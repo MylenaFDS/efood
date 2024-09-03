@@ -3,16 +3,15 @@ import { cores } from '../../styles'; // Ajuste o caminho conforme necessário
 
 export const FooterContainer = styled.footer`
   position: absolute;
-  width: 1366px;
+  width: 2031.81px;
   height: 298px;
   left: 0px;
   top: 1850px;
   background: ${cores.creme}; // Ajuste conforme necessário
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
+
+
+
 
 export const Logo = styled.img`
   position: absolute;

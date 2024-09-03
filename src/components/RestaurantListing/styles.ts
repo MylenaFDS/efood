@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import { cores } from '../../styles';
 export const ListingContainer = styled.div`
   position: absolute;
-  width: 100%;
-  height: 1290px;
-  height: 100%;
-  right:170px;
-  top:0;
+  width: 1024px;
+height: 1290px;
+top: 40px;
+left: 171px;
+opacity: 0px;
+
+  
 `;
 export const Restaurant = styled.div`
   position: absolute;
@@ -14,6 +16,7 @@ export const Restaurant = styled.div`
   height: 398px;
   background-color: ${cores.branca};
   border: 1px solid ${cores.coral};
+  
 `;
 export const Highlight = styled.span`
   position: absolute;
