@@ -28,6 +28,12 @@ export const GlobalCss = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-    overflow-x: hidden;
   }
 `
+
+export const HomeContainer = {
+position: 'relative',
+width: '1366px',
+height: '2148px',
+background: '#FFF8F2'
+}

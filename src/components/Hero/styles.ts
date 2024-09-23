@@ -4,7 +4,6 @@ import Vector from '../../assets/images/Vector.svg'
 
 export const HeroContainer = styled.div`
 position:absolute;
-max-width: 2031.81px;
 width:100%;
 height: 384px;
 top: -24px;
@@ -19,7 +18,8 @@ export const HeroText = styled.h1`
   position: absolute;
   width: 539px;
   height: 84px;
-  margin-left:250px;
+  left:414px;
+  
   top: 236px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -31,12 +31,15 @@ export const HeroText = styled.h1`
 `;
 
 export const Logo = styled.img`
-  position: absolute;
-  width: 125px;
-  height: 57.5px;
-  margin-left:450px;
-  
-  top: 40px;
+/* logo */
+
+position: absolute;
+width: 125px;
+height: 57.5px;
+left: 621px;
+top: 40px;
+
+
   background: ${cores.coral};
 `;
 

@@ -3,7 +3,7 @@ import { cores } from '../../styles'; // Ajuste o caminho conforme necessário
 
 export const FooterContainer = styled.footer`
   position: absolute;
-  width: 2031.81px;
+  width: 100%;
   height: 298px;
   left: 0px;
   top: 1850px;
@@ -17,7 +17,7 @@ export const Logo = styled.img`
   position: absolute;
   width: 125px;
   height: 57.5px;
-  left: 450px;
+  left: 621px;
   top: 40px; // Ajuste conforme necessário
 `;
 
@@ -27,13 +27,24 @@ export const SocialMedia = styled.img`
   height: 24px;
   left: 465px;
   top: 130px; // Ajuste conforme necessário
+
+  /* redes sociais */
+
+
+height: 24px;
+left: 639px;
+
+
+
+
+  
 `;
 
 export const Disclaimer = styled.p`
   position: absolute;
   width: 480px;
   height: 24px;
-  left: 290px;
+  left: 444px;
   top: 200px; // Ajuste conforme necessário
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -42,4 +53,5 @@ export const Disclaimer = styled.p`
   line-height: 12px;
   text-align: center;
   color: ${cores.coral}; // Ajuste conforme necessário
+
 `;
