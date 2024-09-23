@@ -5,7 +5,6 @@ export const ListingContainer = styled.div`
   width: 1024px;
 height: 1290px;
 top: 40px;
-left: 171px; 
 opacity: 0px;
 text-align:center;
 `;
