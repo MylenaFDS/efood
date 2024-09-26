@@ -6,7 +6,7 @@ export const ListingContainer = styled.div`
 height: 1290px;
 top: 40px;
 opacity: 0px;
-text-align:center;
+
 `;
 export const Restaurant = styled.div`
   position: absolute;
