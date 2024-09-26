@@ -15,7 +15,13 @@ export const ButtonContainer = styled.button`
   border: none;
   cursor: pointer;
   font-size: 14px;
-  font-family:Roboto
+  font-family:Roboto;
+  font-size: 14px;
+  font-weight:700px;
+  line-height:16.41px;
+  padding:5px;
+  text-align:center;
+  text-decoration:none;
 &:hover {
     background-color: ${cores.coralDark}; /* Cor mais escura para hover */
 }
@@ -31,12 +37,14 @@ background-color: ${cores.coral};
 color: white;
 border: none;
 cursor: pointer;
-font-family:Roboto
+font-family:Roboto;
 font-size: 14px;
+font-weight:700px;
+line-height:16.41px;
 padding:5px;
 text-align:center;
 text-decoration:none;
-
+color: ${cores.creme};
 &:hover {
   background-color: ${cores.coralDark}; /* Cor mais escura para hover */
 }

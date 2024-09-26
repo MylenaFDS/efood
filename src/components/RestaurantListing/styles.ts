@@ -5,7 +5,7 @@ export const ListingContainer = styled.div`
   width: 1024px;
 height: 1290px;
 top: 40px;
-opacity: 0px;
+
 
 `;
 export const Restaurant = styled.div`
