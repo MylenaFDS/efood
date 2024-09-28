@@ -30,7 +30,7 @@ export const Highlight = styled.span`
   height: 26px;
   left: 210px;
   top: 16px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 14.06px;
   text-align:center;
@@ -50,9 +50,9 @@ export const Tag = styled.div`
   text-align: center;
   display: inline-block;
  
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 14.06px;
+  font-size: 14px;
 `;
 export const RestaurantTitle = styled.h2`
   position: absolute;
