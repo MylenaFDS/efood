@@ -7,7 +7,8 @@ position:absolute;
 width:100%;
 height: 384px;
 top: -24px;
-
+left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
   background: ${cores.creme};
   object-fit:cover;
   background-image: url(${Vector});
@@ -19,13 +20,14 @@ export const HeroText = styled.h1`
   width: 539px;
   height: 84px;
   left:414px;
-  
   top: 236px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 36px;
   line-height: 42px;
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
   text-align: center;
   color: ${cores.coral};
 `;
@@ -39,7 +41,8 @@ height: 57.5px;
 left: 621px;
 top: 40px;
 
-
+left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
   background: ${cores.coral};
 `;
 

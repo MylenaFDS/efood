@@ -3,15 +3,22 @@ import { cores } from '../../styles';
 export const ListingContainer = styled.div`
   position: absolute;
   width: 1024px;
-height: 1290px;
-top: 40px;
-
-
+  height: 1290px;
+  
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
+  display: flex;
+  flex-direction: column; /* Alinha os itens em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
 `;
+
 export const Restaurant = styled.div`
   position: absolute;
   width: 472px;
   height: 398px;
+  left: 171px; /* Centraliza horizontalmente */
+  
+  transform: translateX(-171px); /* Ajusta o deslocamento */
   background-color: ${cores.branca};
   border: 1px solid ${cores.coral};
   

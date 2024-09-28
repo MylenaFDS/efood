@@ -17,8 +17,9 @@ export const Logo = styled.img`
   position: absolute;
   width: 125px;
   height: 57.5px;
-  left: 621px;
   top: 40px; // Ajuste conforme necessário
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
 `;
 
 export const SocialMedia = styled.img`
@@ -27,17 +28,8 @@ export const SocialMedia = styled.img`
   height: 24px;
   left: 465px;
   top: 130px; // Ajuste conforme necessário
-
-  /* redes sociais */
-
-
-height: 24px;
-left: 639px;
-
-
-
-
-  
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
 `;
 
 export const Disclaimer = styled.p`
@@ -52,6 +44,8 @@ export const Disclaimer = styled.p`
   font-size: 10px;
   line-height: 12px;
   text-align: center;
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
   color: ${cores.coral}; // Ajuste conforme necessário
 
 `;
