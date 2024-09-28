@@ -16,8 +16,8 @@ export const Restaurant = styled.div`
   position: absolute;
   width: 472px;
   height: 398px;
+  right:10px;
   left: 171px; /* Centraliza horizontalmente */
-  
   transform: translateX(-171px); /* Ajusta o deslocamento */
   background-color: ${cores.branca};
   border: 1px solid ${cores.coral};
@@ -30,9 +30,9 @@ export const Highlight = styled.span`
   height: 26px;
   left: 210px;
   top: 16px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   font-weight: 700;
-  font-size: 14px;
+  font-size: 14.06px;
   text-align:center;
   background-color: ${cores.coral};
   color: ${cores.creme};
@@ -50,9 +50,9 @@ export const Tag = styled.div`
   text-align: center;
   display: inline-block;
  
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   font-weight: 700;
-  font-size: 14px;
+  font-size: 14.06px;
 `;
 export const RestaurantTitle = styled.h2`
   position: absolute;
