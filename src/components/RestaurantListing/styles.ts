@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { cores } from '../../styles';
+import { breakpoints } from '../../styles';
+
 export const ListingContainer = styled.div`
   position: absolute;
   width: 1024px;

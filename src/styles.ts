@@ -7,12 +7,13 @@ export const cores = {
   coralDark: '#CD5B45'
 }
 
+// Breakpoints para desktop, tablets e celulares
 export const breakpoints = {
   desktop: '1024px',
-  tablet: '821px',
-  mobile: '430px',
-  iphone11: '414px'
-}
+  tablet: '768px',
+  mobile: '480px',
+};
+
 
 export const GlobalCss = createGlobalStyle`
 *{
