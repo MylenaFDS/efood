@@ -1,85 +1,159 @@
 import styled from 'styled-components';
 import { cores } from '../../styles';
-import { breakpoints } from '../../styles';
 
-export const ListingContainer = styled.div`
-  position: absolute;
-  width: 1024px;
-  height: 1290px;
-  
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajusta o deslocamento */
+export const TitleAndRateContainer = styled.div`
   display: flex;
-  flex-direction: column; /* Alinha os itens em coluna */
-  align-items: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  justify-content: space-between; /* Espaço entre o título e a avaliação */
+  width: 100%; /* Ocupa toda a largura do contêiner pai */
+  margin-top: 10px; /* Ajusta a margem superior */
+`;
+export const ListingContainer = styled.div`
+  position: relative;
+  width: 1024px;
+  height: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 1024px) {
+    width: 768px; /* Ajuste para tablets */
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Ajuste para dispositivos móveis */
+    padding: 0 16px;
+  }
 `;
 
 export const Restaurant = styled.div`
-  position: absolute;
-  width: 472px;
-  height: 398px;
-  right:10px;
-  left: 171px; /* Centraliza horizontalmente */
-  transform: translateX(-171px); /* Ajusta o deslocamento */
+  flex: 1 1 45%; /* Para manter dois itens por linha */
+  margin: 10px;
+  top:440px;
+  width:472px;
+  height:398px;
   background-color: ${cores.branca};
   border: 1px solid ${cores.coral};
+  position: relative;
+
+
+
   
 `;
+
 export const Highlight = styled.span`
   position: absolute;
-  padding:5px;
+  padding: 5px;
   width: 150px;
   height: 26px;
-  left: 210px;
+  left: 48%;
   top: 16px;
+  
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 14.06px;
-  text-align:center;
+  font-size: 14px;
+  text-align: center;
   background-color: ${cores.coral};
   color: ${cores.creme};
 `;
+
 export const Tag = styled.div`
   position: absolute;
-  padding:5px;
+  padding: 5px;
   width: 75px;
   height: 26px;
-  left: 370px;
+  right: 16px;
   top: 16px;
   background-color: ${cores.coral};
   color: ${cores.creme};
-  align-itens:center;
   text-align: center;
-  display: inline-block;
- 
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 14px;
 `;
+
+export const RestaurantImage = styled.img`
+  width:100%;
+  height: 217px;
+  object-fit: cover;
+`;
+
 export const RestaurantTitle = styled.h2`
-  position: absolute;
-  width: auto; /* Ajuste a largura para se adaptar ao conteúdo */
-  height: 21px;
-  left: 8px;
-  top: 225px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
-  line-height: 21px;
   color: ${cores.coral};
-  white-space: nowrap; /* Impede a quebra de linha */
-  overflow: hidden; /* Opcional: esconde o texto que ultrapassa a largura */
-  text-overflow: ellipsis; /* Opcional: adiciona "..." no final do texto, se necessário */
+  margin-bottom: 8px;
+  margin-left:8px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
+
 export const RestaurantDescription = styled.p`
-position: absolute;
-  
-  width: 456px;
-  height: 88px;
-  left: 8px;
-  top: 262px;
+  width:456px;
+  height:88px;
+  left:179px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
-  color: ${cores.coral}`;
+margin:10px;
+top: 702px;
+
+gap: 0px;
+opacity: 0px;
+
+  color: ${cores.coral};
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+`;
+export const Rate = styled.h3`
+/* 4.9 */
+
+position: absolute;
+width: 26px;
+height: 21px;
+left: 430px;
+
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+text-align: center;
+
+
+
+color: ${cores.coral};
+`
+export const Star = styled.img`
+width: 21px;
+height: 21px;
+top: 665px;
+margin-right:8px;
+padding: 0.5px 0px 0.5px 0px;
+gap: 0px;
+opacity: 0px;
+
+
+
+`
+
+

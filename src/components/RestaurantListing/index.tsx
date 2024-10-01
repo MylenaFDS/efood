@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListingContainer, Restaurant, RestaurantTitle, RestaurantDescription, Highlight, Tag } from './styles';
+import { ListingContainer, Restaurant, RestaurantTitle,Rate,TitleAndRateContainer,Star,RestaurantDescription, Highlight, Tag, RestaurantImage } from './styles';
 import RestaurantModel from '../../models/restaurant';
 import Button from '../Buttons'; // Importa o novo botão
 
@@ -9,25 +9,21 @@ interface RestaurantListingProps {
 
 const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) => (
   <ListingContainer>
-    {restaurants.map((restaurants, index) => (
-      <Restaurant 
-        key={restaurants.id} 
-        style={{ 
-          top: `${440 + Math.floor(index / 2) * 446}px`, 
-          left: `${171 + (index % 2) * 552}px` 
-        }}
-      >
-        {/* Renderizar o destaque apenas se existir */}
-        {restaurants.highlight && <Highlight>{restaurants.highlight}</Highlight>}
-        <Tag>{restaurants.tag}</Tag>
-        <img src={restaurants.image} alt={restaurants.name} style={{ width: '470px', height: '217px' }} />
-        <RestaurantTitle>{restaurants.name}</RestaurantTitle>
-        <RestaurantDescription>{restaurants.description}</RestaurantDescription>
+    {restaurants.map((restaurant, index) => (
+      <Restaurant key={restaurant.id}>
+        {restaurant.highlight && <Highlight>{restaurant.highlight}</Highlight>}
+        <Tag>{restaurant.tag}</Tag>
+        <RestaurantImage src={restaurant.image} alt={restaurant.name} />
         
-        <Button 
-          type='link' 
-          title='Saiba mais'
-          to='/restaurant'>
+        {/* Agrupando o título e o rate */}
+        <TitleAndRateContainer>
+          <RestaurantTitle>{restaurant.name}</RestaurantTitle>
+          <Rate>{restaurant.rate}</Rate>
+          <Star src={restaurant.star} alt={restaurant.star}/>
+        </TitleAndRateContainer>
+        
+        <RestaurantDescription>{restaurant.description}</RestaurantDescription>
+        <Button type="link" title="Saiba mais" to="/restaurant">
           Saiba mais
         </Button>
       </Restaurant>
