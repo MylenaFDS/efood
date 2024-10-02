@@ -3,11 +3,17 @@ import { cores } from '../../styles';
 
 export const TitleAndRateContainer = styled.div`
   display: flex;
-  align-items: center; /* Alinha os itens verticalmente no centro */
-  justify-content: space-between; /* Espaço entre o título e a avaliação */
+  align-items: center; /* Alinha verticalmente os itens no centro */
+  justify-content: space-between;
   width: 100%; /* Ocupa toda a largura do contêiner pai */
-  margin-top: 10px; /* Ajusta a margem superior */
+  margin-top: 10px;
 `;
+
+export const RateAndStarContainer = styled.div`
+  display: flex;
+  align-items: center; /* Alinha a estrela e a nota lado a lado */
+`;
+
 export const ListingContainer = styled.div`
   position: relative;
   width: 1024px;
@@ -125,37 +131,16 @@ opacity: 0px;
   }
 `;
 export const Rate = styled.h3`
-/* 4.9 */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: ${cores.coral};
+  margin-right: 8px; /* Espaçamento entre a nota e a estrela */
+`;
 
-position: absolute;
-width: 26px;
-height: 21px;
-left: 410px;
-
-
-font-family: 'Roboto', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height */
-text-align: center;
-
-
-
-color: ${cores.coral};
-`
 export const Star = styled.img`
-width: 21px;
-height: 21px;
-top: 665px;
-margin-right:8px;
-padding: 0.5px 0px 0.5px 0px;
-gap: 0px;
-opacity: 0px;
-
-
-
-`
-
-
+  width: 21px;
+  height: 21px;
+`;

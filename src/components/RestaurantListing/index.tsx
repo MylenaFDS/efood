@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListingContainer, Restaurant, RestaurantTitle,Rate,TitleAndRateContainer,Star,RestaurantDescription, Highlight, Tag, RestaurantImage } from './styles';
+import { ListingContainer, Restaurant, RestaurantTitle,Rate,TitleAndRateContainer,RateAndStarContainer,Star,RestaurantDescription, Highlight, Tag, RestaurantImage } from './styles';
 import RestaurantModel from '../../models/restaurant';
 import Button from '../Buttons'; // Importa o novo botão
 
@@ -9,19 +9,22 @@ interface RestaurantListingProps {
 
 const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) => (
   <ListingContainer>
-    {restaurants.map((restaurant, index) => (
+    {restaurants.map((restaurant) => (
       <Restaurant key={restaurant.id}>
         {restaurant.highlight && <Highlight>{restaurant.highlight}</Highlight>}
         <Tag>{restaurant.tag}</Tag>
         <RestaurantImage src={restaurant.image} alt={restaurant.name} />
-        
-        {/* Agrupando o título e o rate */}
+
         <TitleAndRateContainer>
           <RestaurantTitle>{restaurant.name}</RestaurantTitle>
-          <Rate>{restaurant.rate}</Rate>
-          <Star src={restaurant.star} alt={restaurant.star}/>
+          
+          {/* Agrupando a nota e a estrela */}
+          <RateAndStarContainer>
+            <Rate>{restaurant.rate}</Rate>
+            <Star src={restaurant.star} alt="Star" />
+          </RateAndStarContainer>
         </TitleAndRateContainer>
-        
+
         <RestaurantDescription>{restaurant.description}</RestaurantDescription>
         <Button type="link" title="Saiba mais" to="/restaurant">
           Saiba mais
@@ -30,5 +33,7 @@ const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) =>
     ))}
   </ListingContainer>
 );
+
+
 
 export default RestaurantListing;
