@@ -2,55 +2,59 @@ import styled from 'styled-components';
 import { cores } from '../../styles';
 
 export const TitleAndRateContainer = styled.div`
-  display: flex;
-  align-items: center; /* Alinha verticalmente os itens no centro */
-  justify-content: space-between;
-  width: 100%; /* Ocupa toda a largura do contêiner pai */
-  margin-top: 10px;
-`;
+
+display: flex;
+align-items: center; /* Alinha verticalmente os itens no centro */
+justify-content: space-between;
+width: 100%; /* Ocupa toda a largura do contêiner pai */
+margin-top: 10px;`;
+
 
 export const RateAndStarContainer = styled.div`
-  display: flex;
-  align-items: center; /* Alinha a estrela e a nota lado a lado */
-`;
+
+display: flex;
+align-items: center; /* Alinha a estrela e a nota lado a lado */`
+;
 
 export const ListingContainer = styled.div`
-  position: relative;
-  width: 1024px;
-  height: auto;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+position: relative;
+width: 100%; /* Ajusta para 100% para ser mais responsivo */
+max-width: 1024px; /* Limita a largura máxima */
+height: auto;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: flex-start;
 
-  /* Para tablets */
-  @media (max-width: 1024px) {
-    width: 768px;
-  }
+/* Para tablets */
+@media (max-width: 1024px) {
+  width: 100%;
+  max-width: 768px; /* Limita a largura no tablet */
+}
 
-  /* Para dispositivos móveis */
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 0 16px;
-  }
-`;
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+  width: 100%;
+  padding: 0 16px;
+}`
+;
 
 export const Restaurant = styled.div`
+position: relative;
   flex: 1 1 45%; /* Para manter dois itens por linha */
   margin: 20px;
   top:440px;
-  width:472px;
+  width: 45%; /* Usar porcentagem em vez de valor fixo */
+  min-width: 300px; /* Define uma largura mínima */
+  max-width: 472px; /* Define uma largura máxima */
   height:398px;
   background-color: ${cores.branca};
   border: 1px solid ${cores.coral};
   position: relative;
-
-
-
-  
-`;
+`
+;
 
 export const Highlight = styled.span`
   position: absolute;
@@ -65,8 +69,9 @@ export const Highlight = styled.span`
   font-size: 14px;
   text-align: center;
   background-color: ${cores.coral};
-  color: ${cores.creme};
-`;
+  color: ${cores.creme};`
+  
+;
 
 export const Tag = styled.div`
   position: absolute;
@@ -80,14 +85,14 @@ export const Tag = styled.div`
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 14px;
-`;
+  font-size: 14px;`
+;
 
 export const RestaurantImage = styled.img`
   width:100%;
   height: 217px;
-  object-fit: cover;
-`;
+  object-fit: cover;`
+;
 
 export const RestaurantTitle = styled.h2`
   font-family: 'Roboto', sans-serif;
@@ -102,8 +107,8 @@ export const RestaurantTitle = styled.h2`
 
   @media (max-width: 480px) {
     font-size: 14px;
-  }
-`;
+  }`
+;
 
 export const RestaurantDescription = styled.p`
   width:456px;
@@ -128,8 +133,8 @@ opacity: 0px;
 
   @media (max-width: 480px) {
     font-size: 12px;
-  }
-`;
+  }`
+;
 export const Rate = styled.h3`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -137,10 +142,10 @@ export const Rate = styled.h3`
   line-height: 21px;
   text-align: center;
   color: ${cores.coral};
-  margin-right: 8px; /* Espaçamento entre a nota e a estrela */
-`;
+  margin-right: 8px; /* Espaçamento entre a nota e a estrela */`
+;
 
 export const Star = styled.img`
   width: 21px;
-  height: 21px;
-`;
+  height: 21px;`
+;
