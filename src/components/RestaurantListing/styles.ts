@@ -10,7 +10,7 @@ export const TitleAndRateContainer = styled.div`
 `;
 export const ListingContainer = styled.div`
   position: relative;
-  width: 100%;
+  width: 1024px;
   height: auto;
   left: 50%;
   transform: translateX(-50%);
