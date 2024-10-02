@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // Defina o estilo do botão padrão
 export const ButtonContainer = styled.button`
   position: relative;
+  
   width: 90px;
   height: 30px;
   background-color: ${cores.coral};

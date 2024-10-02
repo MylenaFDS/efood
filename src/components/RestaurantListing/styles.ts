@@ -10,7 +10,7 @@ export const TitleAndRateContainer = styled.div`
 `;
 export const ListingContainer = styled.div`
   position: relative;
-  width: 1024px;
+  width: 100%;
   height: auto;
   left: 50%;
   transform: translateX(-50%);
@@ -19,19 +19,21 @@ export const ListingContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
 
+  /* Para tablets */
   @media (max-width: 1024px) {
-    width: 768px; /* Ajuste para tablets */
+    width: 768px;
   }
 
+  /* Para dispositivos móveis */
   @media (max-width: 768px) {
-    width: 100%; /* Ajuste para dispositivos móveis */
+    width: 100%;
     padding: 0 16px;
   }
 `;
 
 export const Restaurant = styled.div`
   flex: 1 1 45%; /* Para manter dois itens por linha */
-  margin: 10px;
+  margin: 20px;
   top:440px;
   width:472px;
   height:398px;
@@ -131,7 +133,7 @@ height: 21px;
 left: 430px;
 
 
-font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 18px;
