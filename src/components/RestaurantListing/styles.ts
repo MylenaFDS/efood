@@ -130,7 +130,7 @@ export const Rate = styled.h3`
 position: absolute;
 width: 26px;
 height: 21px;
-left: 430px;
+left: 410px;
 
 
 font-family: 'Roboto', sans-serif;
