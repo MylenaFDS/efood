@@ -38,17 +38,14 @@ export const ListingContainer = styled.div`
   top: 440px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-items: center;
   padding: 0 16px;
 
-  @media (max-width: 1024px) {
-    max-width: 768px;
-  }
-
   @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Apenas 1 card por linha em telas menores */
     max-width: 100%;
   }
 
@@ -57,10 +54,11 @@ export const ListingContainer = styled.div`
   }
 `;
 
+
 export const Restaurant = styled.div`
   flex: 1 1 30%;
   margin: 20px;
-  width: 45%;
+  width: 90%;
   min-width: 280px;
   max-width: 500px;
   min-height: 398px; /* Altura mínima */
@@ -89,12 +87,13 @@ export const Highlight = styled.span`
   width: 150px;
   height:26px;
   top: 16px;
-  right:5px;
-  left: 48%;
-  transform: translateX(-48%);
-  font-family: 'Roboto', sans-serif;
+  
+  left: 60%;
+  transform: translateX(-60%);
+  font-family: 'Roboto',sans-serif;
   font-weight: 700;
-  font-size: 14px; 
+  font-size: 12px; 
+  line-height:14.06px;
   text-align: center;
   background-color: ${cores.coral};
   color: ${cores.creme};
