@@ -97,7 +97,7 @@ export const Highlight = styled.span`
   text-align: center;
   background-color: ${cores.coral};
   color: ${cores.creme};
-  
+  white-space: nowrap; 
 
   @media (max-width: 768px) {
     font-size: 14px;
@@ -156,7 +156,10 @@ export const RestaurantTitle = styled.h2`
   color: ${cores.coral};
   margin-bottom: 8px;
   margin-left: 8px;
+  white-space: nowrap;      /* Garante que o texto não quebre */
   
+  
+
   @media (max-width: 768px) {
     font-size: 16px;
   }
@@ -165,6 +168,7 @@ export const RestaurantTitle = styled.h2`
     font-size: 14px;
   }
 `;
+
 
 export const RestaurantDescription = styled.p`
   font-family: 'Roboto', sans-serif;
