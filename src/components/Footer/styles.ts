@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { cores } from '../../styles'; // Ajuste o caminho conforme necessário
 
 export const FooterContainer = styled.footer`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 298px;
   left: 0px;
-  top: 1850px;
+  top: 484px;
   background: ${cores.creme}; // Ajuste conforme necessário
 `;
 
