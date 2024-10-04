@@ -23,7 +23,7 @@ export const RateAndStarContainer = styled.div`
   gap: 1px; /* Espaçamento entre a nota e a estrela */
   
   @media (max-width: 480px) {
-    justify-content: space-between;
+    justify-content: flex-end; /* Alinha à direita */
     width: 100%;
   }
 `;
@@ -156,7 +156,7 @@ export const RestaurantTitle = styled.h2`
   color: ${cores.coral};
   margin-bottom: 8px;
   margin-left: 8px;
-
+  
   @media (max-width: 768px) {
     font-size: 16px;
   }
