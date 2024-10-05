@@ -5,56 +5,73 @@ export const FooterContainer = styled.footer`
   position: relative;
   width: 100%;
   height: 298px;
-  left: 0px;
-  top: 484px;
   background: ${cores.creme}; // Ajuste conforme necessário
-  object-fit:cover;
+  top:440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 768px) {
-    flex-direction: row; /* Garante que em telas menores tudo fique em linha */
-    align-items: center;
-    justify-content: space-between;
+    height: auto; /* Deixa a altura automática para se ajustar ao conteúdo */
+    padding: 20px; /* Adiciona um espaçamento para melhorar a estética */
+    justify-content: space-around; /* Ajusta o espaçamento entre os itens */
+  }
+
+  @media (max-width: 480px) {
+    height: auto;
+    padding: 15px;
+    justify-content: center;
+    flex-direction: column; /* Coloca os elementos em uma coluna para melhor visualização em telas pequenas */
   }
 `;
 
-
-
-
 export const Logo = styled.img`
-  position: absolute;
   width: 125px;
   height: 57.5px;
-  top: 40px; // Ajuste conforme necessário
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajusta o deslocamento */
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 46px; /* Reduz o tamanho da logo em telas menores */
+  }
+
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 36.5px; /* Reduz ainda mais em dispositivos móveis */
+  }
 `;
 
 export const SocialMedia = styled.img`
-  position: absolute;
   width: 88px;
   height: 24px;
-  left: 465px;
-  top: 130px; // Ajuste conforme necessário
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajusta o deslocamento */
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    width: 70px;
+    height: 20px; /* Reduz o tamanho dos ícones em tablets */
+  }
+
+  @media (max-width: 480px) {
+    width: 60px;
+    height: 18px; /* Ajusta para telas menores */
+  }
 `;
 
 export const Disclaimer = styled.p`
-  position: absolute;
   width: 480px;
-  height: 24px;
-  left: 444px;
-  top: 200px; // Ajuste conforme necessário
   font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 10px;
-  line-height: 12px;
   text-align: center;
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajusta o deslocamento */
-  color: ${cores.coral}; // Ajuste conforme necessário
-  object-fit:cover;
+  color: ${cores.coral};
 
+  @media (max-width: 768px) {
+    width: 300px; /* Reduz a largura em tablets */
+    font-size: 9px;
+  }
 
+  @media (max-width: 480px) {
+    width: 390px; /* Ajusta para telas menores */
+    font-size: 8px;
+  }
 `;
