@@ -79,7 +79,7 @@ export const Disclaimer = styled.p`
   }
 
   @media (max-width: 480px) {
-    width: 390px; /* Ajusta para telas menores */
+    width: 350px; /* Ajusta para telas menores */
     font-size: 8px;
   }
 `;

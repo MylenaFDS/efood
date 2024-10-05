@@ -30,6 +30,18 @@ export const HeroText = styled.h1`
   transform: translateX(-50%); /* Ajusta o deslocamento */
   text-align: center;
   color: ${cores.coral};
+
+  @media (max-width: 768px) {
+    width: 80%;
+    font-size: 10px; /* Reduz a fonte para tablets */
+    top: 200px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    font-size: 28px; /* Reduz ainda mais a fonte para dispositivos móveis */
+    top: 180px;
+  }
 `;
 
 export const Logo = styled.img`
