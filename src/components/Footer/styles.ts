@@ -8,6 +8,13 @@ export const FooterContainer = styled.footer`
   left: 0px;
   top: 484px;
   background: ${cores.creme}; // Ajuste conforme necessário
+  object-fit:cover;
+
+  @media (max-width: 768px) {
+    flex-direction: row; /* Garante que em telas menores tudo fique em linha */
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 
@@ -47,5 +54,7 @@ export const Disclaimer = styled.p`
   left: 50%; /* Centraliza horizontalmente */
   transform: translateX(-50%); /* Ajusta o deslocamento */
   color: ${cores.coral}; // Ajuste conforme necessário
+  object-fit:cover;
+
 
 `;
