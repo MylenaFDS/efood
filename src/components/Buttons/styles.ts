@@ -46,11 +46,7 @@ export const ButtonLink = styled(Link)`
   padding: 5px;
   text-align: center;
   text-decoration: none;
-
-  /* Estilo hover para mudança de cor */
-  &:hover {
-    background-color: ${cores.coralDark};
-  }
+  
 
   /* Ajuste de margem ou posição (opcional) */
   margin-top: 140px; /* Substitui 'top' para melhor layout responsivo */
