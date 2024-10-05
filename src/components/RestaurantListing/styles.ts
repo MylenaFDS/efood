@@ -83,32 +83,34 @@ export const Restaurant = styled.div`
 
 export const Highlight = styled.span`
   position: absolute;
-  padding: 5px;
-  width: 130px;
-  height:26px;
-  top: 16px;
-  
-  left: 60%;
-  transform: translateX(-60%);
-  font-family: 'Roboto',sans-serif;
-  font-weight: 700;
-  font-size: 12px; 
-  line-height:14.06px;
   text-align: center;
+  padding:5px;
+  
+  height: 26px;
+  top: 16px;  /* Distância do topo do contêiner pai */
+  right: 100px;  /* Distância fixa do lado dirito */
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
   background-color: ${cores.coral};
   color: ${cores.creme};
-  white-space: nowrap; 
-  
+  text-decoration: none;
+  cursor: default;
+  white-space: nowrap;      /* Garante que o texto não quebre */
+  margin-bottom: 8px;
+  display: inline-block;
+
   @media (max-width: 768px) {
-    font-size: 14px;
+    
     width: 140px;
   }
 
   @media (max-width: 480px) {
-    font-size: 12px;
+   
     width: 130px;
   }
 `;
+
 
 export const Tag = styled.div`
   position: absolute;
@@ -121,19 +123,11 @@ export const Tag = styled.div`
   color: ${cores.creme};
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 12px;
   justify-content: flex-end;
   
-  @media (max-width: 768px) {
-    font-size: 13px;
-    width: 65px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 12px;
-    width: 60px;
-  }
+ 
 `;
 
 export const RestaurantImage = styled.img`
