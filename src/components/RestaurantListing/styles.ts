@@ -150,6 +150,7 @@ export const RestaurantTitle = styled.h2`
   font-size: 18px;
   color: ${cores.coral};
   margin-bottom: 8px;
+  margin-top:8px;
   margin-left: 8px;
   white-space: nowrap;      /* Garante que o texto não quebre */
   
