@@ -35,7 +35,7 @@ export const ListingContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   height: auto;
-  top: 440px;
+  top: 400px;
   left: 50%;
   transform: translateX(-50%);
   display: grid;
