@@ -29,6 +29,7 @@ export const FooterContainer = styled.footer`
     flex-direction: column; /* Coloca os elementos em uma coluna */
     margin: 0 auto; /* Centraliza horizontalmente */
     flex-direction: column; /* Coloca os elementos em uma coluna para melhor visualização em telas pequenas */
+    object-fit:cover;
   }
 `;
 
