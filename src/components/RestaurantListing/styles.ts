@@ -84,7 +84,7 @@ export const Restaurant = styled.div`
 export const Highlight = styled.span`
   position: absolute;
   padding: 5px;
-  width: 150px;
+  width: 130px;
   height:26px;
   top: 16px;
   
@@ -98,7 +98,7 @@ export const Highlight = styled.span`
   background-color: ${cores.coral};
   color: ${cores.creme};
   white-space: nowrap; 
-
+  
   @media (max-width: 768px) {
     font-size: 14px;
     width: 140px;
@@ -123,7 +123,8 @@ export const Tag = styled.div`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 14px;
-
+  justify-content: flex-end;
+  
   @media (max-width: 768px) {
     font-size: 13px;
     width: 65px;
