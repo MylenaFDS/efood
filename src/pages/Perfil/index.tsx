@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "../../components/Header";
+import { useParams } from 'react-router-dom';
 import RestaurantListing from "../../components/RestaurantListing";
 import estrela from '../../assets/images/estrela.jpg';
 import HiokiSushi from '../../assets/images/HiokiSushi.svg';
@@ -68,11 +69,29 @@ const restaurants:RestaurantModel[] = [
   }
 ]
 
-const Perfil = () => (
+const Perfil = () => {
+  const { id } = useParams<{ id: string }>();
+  const restaurant = restaurants.find((r) => r.id === Number(id));
+
+  if (!restaurant) {
+    return <div>Restaurante não encontrado</div>;
+  }
+
+  return (
     <>
-        <Header/>
-        <RestaurantListing restaurants={restaurants} />
+      <Header />
+      <div>
+        <h1>{restaurant.name}</h1>
+        <img src={restaurant.image} alt={restaurant.name} />
+        <p>{restaurant.description}</p>
+        <span>{restaurant.tag}</span>
+        <span>{restaurant.rate}</span>
+        <img src={restaurant.star} alt="Star" />
+        {/* Adicione outros detalhes que deseja exibir */}
+      </div>
     </>
-);
+  );
+};
+
 
 export default Perfil;
