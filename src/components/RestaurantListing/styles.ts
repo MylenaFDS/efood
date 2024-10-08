@@ -205,7 +205,7 @@ export const Rate = styled.h3`
 export const Star = styled.img`
   width: 21px;
   height: 21px;
-
+  margin-right:8px;
   @media (max-width: 768px) {
     width: 18px;
     height: 18px;
