@@ -7,7 +7,8 @@ interface RestaurantDetailsContainerProps {
 }
 export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerProps>`
     margin-top:300px;
-    max-width: 800px;
+  width:auto;
+  height:280px;
   margin: 0 auto;
   padding: 20px;
   background: ${cores.branca};
@@ -22,6 +23,7 @@ export const RestaurantImage = styled.img`
 `;
 
 export const RestaurantTitle = styled.h2`
+  margin-top:200px;
   font-size: 2rem;
   margin-bottom: 10px;
   color: ${cores.coralDark};

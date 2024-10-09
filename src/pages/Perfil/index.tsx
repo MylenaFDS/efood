@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from "../../components/Header";
 import { useParams } from 'react-router-dom';
-import RestaurantListing from "../../components/RestaurantListing";
 import estrela from '../../assets/images/estrela.jpg';
 import HiokiSushi from '../../assets/images/HiokiSushi.svg';
 import LaDolceVitaTrattoria from '../../assets/images/LaDolceVitaTrattoria.svg';
