@@ -2,7 +2,10 @@
 import styled from 'styled-components';
 import { cores } from '../../styles';
 
-export const RestaurantDetailsContainer = styled.div`
+interface RestaurantDetailsContainerProps {
+  backgroundImage: string;
+}
+export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerProps>`
     margin-top:300px;
     max-width: 800px;
   margin: 0 auto;
