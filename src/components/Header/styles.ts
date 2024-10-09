@@ -41,7 +41,10 @@ export const LinkRestaurants = styled.li`
   line-height: 21px;
   text-align: center;
   color: ${cores.coral};
-  text-decoration:none;
+  a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Mantém a cor do texto */
+  }
 `;
 
 export const TextCart = styled.div`
@@ -57,4 +60,9 @@ export const TextCart = styled.div`
   text-decoration:none;
   text-align: right;
   color: ${cores.coral};
+
+  a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Mantém a cor do texto */
+  }
 `;
