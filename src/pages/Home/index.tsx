@@ -8,7 +8,7 @@ import SaboresDaTerra from '../../assets/images/SaboresDaTerra.jpg';
 import LosTacosLocos from '../../assets/images/LosTacosLocos.jpg';
 import LaBelleEpoque from '../../assets/images/LaBelleEpoque.jpg';
 import PalacioDeJade from '../../assets/images/PalacioDeJade.jpg';
-import RestaurantModel  from '../../models/restaurant';
+import RestaurantModel  from '../../models/RestaurantModel';
 const restaurants:RestaurantModel[] = [
     {
       id: 1,

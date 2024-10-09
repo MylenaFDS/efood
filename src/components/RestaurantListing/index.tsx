@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListingContainer, Restaurant, RestaurantTitle,Rate,TitleAndRateContainer,RateAndStarContainer,Star,RestaurantDescription, Highlight, Tag, RestaurantImage } from './styles';
-import RestaurantModel from '../../models/restaurant';
+import RestaurantModel from '../../models/RestaurantModel';
 import Button from '../Buttons'; // Importa o novo botão
 
 interface RestaurantListingProps {

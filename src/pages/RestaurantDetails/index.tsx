@@ -23,7 +23,6 @@ const RestaurantDetails: React.FC = () => {
       <Header />
       <RestaurantDetailsContainer backgroundImage={restaurant.image}>
         <RestaurantTitle>{restaurant.name}</RestaurantTitle>
-        <RestaurantDescription>{restaurant.description}</RestaurantDescription>
       </RestaurantDetailsContainer>
 
       {/* ProductsContainer agora está separado de RestaurantDetailsContainer */}

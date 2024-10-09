@@ -1,10 +1,10 @@
 // src/data/restaurants.ts
 
-import RestaurantModel from '../models/restaurant';
+import Restaurant from '../models/restaurants';
 import Product from '../models/product';
 
-const restaurants: RestaurantModel[] = [
-  new RestaurantModel(
+const restaurants: Restaurant[] = [
+  new Restaurant(
     1,
     'Hioki Sushi',
     '5.0',
@@ -24,10 +24,16 @@ const restaurants: RestaurantModel[] = [
         'Temaki de salmão com cream cheese',
         'R$ 25,00',
         'path/to/temaki-especial-image.png'
+      ),
+      new Product(
+        'Temaki Especial',
+        'Temaki de salmão com cream cheese',
+        'R$ 25,00',
+        'path/to/temaki-especial-image.png'
       )
     ]
   ),
-  new RestaurantModel(
+  new Restaurant(
     2,
     'La Dolce Vita',
     '4.8',
@@ -50,7 +56,7 @@ const restaurants: RestaurantModel[] = [
       )
     ]
   ),
-  new RestaurantModel(
+  new Restaurant(
     3,
     'Sabores da Terra',
     '4.8',
@@ -73,7 +79,7 @@ const restaurants: RestaurantModel[] = [
       )
     ]
   ),
-  new RestaurantModel(
+  new Restaurant(
     4,
     'La Dolce Vita',
     '4.8',
@@ -96,7 +102,7 @@ const restaurants: RestaurantModel[] = [
       )
     ]
   ),
-  new RestaurantModel(
+  new Restaurant(
     5,
     'La Dolce Vita',
     '4.8',
@@ -119,7 +125,7 @@ const restaurants: RestaurantModel[] = [
       )
     ]
   ),
-  new RestaurantModel(
+  new Restaurant(
     6,
     'La Dolce Vita',
     '4.8',

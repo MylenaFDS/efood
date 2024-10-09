@@ -11,7 +11,6 @@ class RestaurantModel {
   highlight?: string; // Opcional, pois nem todos os restaurantes têm destaque
   tag: string;
   image: string;
-  products?: Product[]; // Lista de produtos associados ao restaurante
 
   constructor(
     id: number,
@@ -21,7 +20,6 @@ class RestaurantModel {
     description: string,
     tag: string,
     image: string,
-    products?: Product[] // Lista de produtos é opcional, caso alguns restaurantes não tenham produtos definidos
   ) {
     this.id = id;
     this.name = name;
@@ -30,7 +28,6 @@ class RestaurantModel {
     this.description = description;
     this.tag = tag;
     this.image = image;
-    this.products = products;
   }
 }
 
