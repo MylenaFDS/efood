@@ -3,14 +3,14 @@ import { HeaderContainer,Fundo,Logo,LinkRestaurants,TextCart } from "./styles";
 import logo from '../../assets/images/logo.svg'
 import Vector from '../../assets/images/Vector.svg'
 import { Link } from "react-router-dom";
+import Home from "../../pages/Home";
 
 const Header: React.FC = () =>{
     return <HeaderContainer>
         <Fundo src={Vector} alt="Fundo" />
         <nav>
             <LinkRestaurants>
-                <Link to="/home">Restaurantes</Link>
-                
+                <Link to="/">Restaurantes</Link>
             </LinkRestaurants>
         </nav>
 

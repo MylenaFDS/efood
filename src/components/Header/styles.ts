@@ -1,76 +1,60 @@
-import styled from 'styled-components'
-import { cores } from '../../styles'
+import styled from 'styled-components';
+import { cores } from '../../styles';
 
 export const HeaderContainer = styled.div`
-/* Header */
-display:flex;
-position: absolute;
-width: 2031.81px;
-height: 186px;
-left: 0px;
-top: -23px;
-background: ${cores.creme};
-  object-fit:cover;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente os itens */
+  align-items: center; /* Centraliza verticalmente os itens */
+  position: relative;
+  width: 100%; /* Ajusta para ocupar toda a largura */
+  height: 186px;
+  background: ${cores.creme};
 `;
 
 export const Fundo = styled.img`
-position: absolute;
-width: 100%;
-height: 100%;
-left: 0px;
-top: -24px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
 `;
 
 export const Logo = styled.img`
-  position: absolute;
+  position:absolute;
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta o deslocamento */
   width: 125px;
   height: 57.5px;
-  left: 621px;
-  top: 40px;
-
-  background: ${cores.coral};
+  background: ${cores.coral}; /* Se precisar de um fundo para a logo */
 `;
 
 export const LinkRestaurants = styled.li`
-/* Restaurantes */
-
-position: absolute;
-width: 109px;
-height: 21px;
-left: 171px;
-top: 59px;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 900;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height */
-text-align: center;
-
-color: ${cores.coral};
-
-
+  position: absolute;
+  left: 20px; /* Ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: ${cores.coral};
+  text-decoration:none;
 `;
 
-export const TextCart = styled.text`
-/* 0 produto(s) no carrinho */
-
-position: absolute;
-width: 256px;
-height: 21px;
-left: 939px;
-top: 59px;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 900;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height */
-text-align: right;
-
-color: ${cores.coral};
-
-
-`
+export const TextCart = styled.div`
+  position: absolute;
+  right: 20px; /* Ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  text-decoration:none;
+  text-align: right;
+  color: ${cores.coral};
+`;
