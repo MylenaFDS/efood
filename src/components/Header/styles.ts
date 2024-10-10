@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { cores } from '../../styles';
+import Vector from '../../assets/images/Vector.svg'
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -9,6 +10,8 @@ export const HeaderContainer = styled.div`
   width: 100%; /* Ajusta para ocupar toda a largura */
   height: 186px;
   background: ${cores.creme};
+  object-fit:cover;
+  background-image: url(${Vector});
 `;
 
 export const Fundo = styled.img`
