@@ -10,6 +10,7 @@ import LaBelleEpoque from '../../assets/images/LaBelleEpoque.jpg';
 import PalacioDeJade from '../../assets/images/PalacioDeJade.jpg';
 import RestaurantModel  from '../../models/RestaurantModel';
 
+
 const restaurants:RestaurantModel[] = [
   {
     id: 1,
@@ -88,6 +89,7 @@ const Perfil = () => {
         <img src={restaurant.star} alt="Star" />
         {/* Adicione outros detalhes que deseja exibir */}
       </div>
+      
     </>
   );
 };

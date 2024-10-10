@@ -10,6 +10,7 @@ import {
 } from './styles';
 import restaurants from '../../data/restaurants';
 
+
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const restaurant = restaurants.find((rest) => rest.id === Number(id));

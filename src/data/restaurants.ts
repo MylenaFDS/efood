@@ -47,6 +47,18 @@ const restaurants: Restaurant[] = [
                 'Deliciosa sobremesa italiana com café, mascarpone e cacau',
                 'R$ 18,00',
                 'path/to/tiramisu-image.png'
+            ),
+            new Product(
+                'Tiramisu',
+                'Deliciosa sobremesa italiana com café, mascarpone e cacau',
+                'R$ 18,00',
+                'path/to/tiramisu-image.png'
+            ),
+            new Product(
+                'Tiramisu',
+                'Deliciosa sobremesa italiana com café, mascarpone e cacau',
+                'R$ 18,00',
+                'path/to/tiramisu-image.png'
             )
         ]
     ),
