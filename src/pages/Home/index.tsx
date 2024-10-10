@@ -49,7 +49,7 @@ const restaurants:RestaurantModel[] = [
     },
     {
       id: 5,
-      name: 'La Belle Epoque',
+      name: 'La Belle Époque',
       rate: '4.9',
       star: estrela,
       description: 'La Belle Époque é um refúgio de elegância, onde a autêntica culinária francesa ganha vida. Saboreie pratos clássicos como escargots, coq au vin e crêpes, preparados com maestria e um toque de tradição. Venha experimentar a essência da França em cada garfada!',

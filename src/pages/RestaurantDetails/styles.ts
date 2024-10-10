@@ -6,13 +6,16 @@ interface RestaurantDetailsContainerProps {
   backgroundImage: string;
 }
 export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerProps>`
-    margin-top:300px;
-  width:auto;
-  height:280px;
+  margin-top: 300px;
+  width: auto;
+  height: 280px;
   margin: 0 auto;
   padding: 20px;
-  background: ${cores.branca};
-  border: 1px solid ${cores.coral};
+  background-image: url(${(props) => props.backgroundImage});
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
 `;
 
 export const RestaurantImage = styled.img`
@@ -25,8 +28,11 @@ export const RestaurantImage = styled.img`
 export const RestaurantTitle = styled.h2`
   margin-top:200px;
   font-size: 2rem;
+  font-weight:900px;
   margin-bottom: 10px;
-  color: ${cores.coralDark};
+  line-height:37.5px;
+  color:#FFFFFF;
+  margin-left:170px;
 `;
 
 export const RestaurantDescription = styled.p`
@@ -35,7 +41,8 @@ export const RestaurantDescription = styled.p`
 `;
 
 export const ProductsContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
   flex-wrap: wrap;
   gap: 20px;
 `;
