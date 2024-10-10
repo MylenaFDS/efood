@@ -32,7 +32,7 @@ const restaurants: Restaurant[] = [
     ),
     new Restaurant(
         2,
-        'La Dolce Vita',
+        'La Dolce Vita Trattoria',
         LaDolceVitaTrattoria,
         'Italiana',
         [

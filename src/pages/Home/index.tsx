@@ -22,7 +22,7 @@ const restaurants:RestaurantModel[] = [
     },
     {
       id: 2,
-      name: 'La Dolce Vita',
+      name: 'La Dolce Vita Trattoria',
       rate: '5.0',
       star: estrela,
       description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',

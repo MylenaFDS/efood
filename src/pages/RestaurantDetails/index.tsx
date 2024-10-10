@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import {
   RestaurantDetailsContainer,
   RestaurantTitle,
-  RestaurantDescription,
+  RestaurantTag,
   ProductsContainer,
   ProductItem,
 } from './styles';
@@ -22,6 +22,7 @@ const RestaurantDetails: React.FC = () => {
     <>
       <Header />
       <RestaurantDetailsContainer backgroundImage={restaurant.image}>
+        <RestaurantTag>{restaurant.tag}</RestaurantTag>
         <RestaurantTitle>{restaurant.name}</RestaurantTitle>
       </RestaurantDetailsContainer>
 

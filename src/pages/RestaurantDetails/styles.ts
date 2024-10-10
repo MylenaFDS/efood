@@ -16,6 +16,9 @@ export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerP
   background-position: center;
   display: flex;
   align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative; /* Permite o posicionamento absoluto de elementos filhos */
 `;
 
 export const RestaurantImage = styled.img`
@@ -23,6 +26,22 @@ export const RestaurantImage = styled.img`
   height: auto;
   border-radius: 8px;
   margin-bottom: 20px;
+`;
+
+export const RestaurantTag = styled.h2`
+  position: absolute;
+  top: 10px;
+  left: 170px;
+  width: 101px;
+  height: 33.25px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 100; /* Ajustado para deixar a letra mais fina */
+  line-height: 38px;
+  color: #FFFFFF;
+  text-align: left;
+  margin-left: 20px; /* Ajuste de espaçamento à esquerda */
+  opacity: 0.7; /* Deixa a tag um pouco translúcida */
 `;
 
 export const RestaurantTitle = styled.h2`
@@ -33,11 +52,6 @@ export const RestaurantTitle = styled.h2`
   line-height:37.5px;
   color:#FFFFFF;
   margin-left:170px;
-`;
-
-export const RestaurantDescription = styled.p`
-  font-size: 1rem;
-  color: ${cores.coral};
 `;
 
 export const ProductsContainer = styled.div`
