@@ -8,6 +8,13 @@ import SaboresDaTerra from '../assets/images/SaboresDaTerra.jpg';
 import LosTacosLocos from '../assets/images/LosTacosLocos.jpg';
 import LaBelleEpoque from '../assets/images/LaBelleEpoque.jpg';
 import PalacioDeJade from '../assets/images/PalacioDeJade.jpg';
+import SushiCombo from '../assets/images/products/restaurant1/SushiCombo.jpg';
+import TemakiEspecial from '../assets/images/products/restaurant1/TemakiEspecial.jpg';
+import Ramen from '../assets/images/products/restaurant1/Ramen.avif';
+import Tempura from '../assets/images/products/restaurant1/Tempura.jpg';
+import Yakitori from '../assets/images/products/restaurant1/Yakitori.jpg';
+import Sashimi from '../assets/images/products/restaurant1/Sashimi.jpg';
+
 
 const restaurants: Restaurant[] = [
     new Restaurant(
@@ -18,15 +25,39 @@ const restaurants: Restaurant[] = [
         [
             new Product(
                 'Sushi Combo',
-                '10 peças de sushi',
+                'Uma combinação especial de 10 peças de sushi variados, incluindo nigiri e hossomaki, preparados com os melhores cortes de peixe fresco e arroz temperado.',
                 'R$ 50,00',
-                'path/to/sushi-combo-image.png'
+                SushiCombo
             ),
             new Product(
                 'Temaki Especial',
-                'Temaki de salmão com cream cheese',
+                'Temaki de salmão recheado com cream cheese, cebolinha e um toque de gergelim. Envolto em alga nori crocante, perfeito para quem busca um sabor autêntico.',
                 'R$ 25,00',
-                'path/to/temaki-especial-image.png'
+                TemakiEspecial
+            ),
+            new Product(
+                'Ramen',
+                'Delicioso ramen com caldo encorpado à base de miso, acompanhado de fatias suculentas de carne de porco, ovo cozido, alga nori, e cebolinha. Um prato reconfortante para qualquer momento.',
+                'R$ 40,00',
+                Ramen
+            ),
+            new Product(
+                'Tempura',
+                'Legumes frescos e camarões empanados em uma massa leve e crocante, servidos com molho de soja para mergulhar. Perfeito para quem gosta de contrastes de textura.',
+                'R$ 30,00',
+                Tempura
+            ),
+            new Product(
+                'Yakitori',
+                'Espetinhos de frango grelhados e caramelizados com molho tare, com um toque de cebolinha. Macio por dentro e levemente crocante por fora, ideal para petiscar.',
+                'R$ 20,00',
+                Yakitori
+            ),
+            new Product(
+                'Sashimi',
+                'Fatias finas de salmão e atum frescos, servidas com molho de soja e um toque de wasabi. Uma experiência pura e autêntica de apreciar o sabor do peixe.',
+                'R$ 35,00',
+                Sashimi
             )
         ]
     ),

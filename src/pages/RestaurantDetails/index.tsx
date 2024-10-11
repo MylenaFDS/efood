@@ -35,7 +35,6 @@ const RestaurantDetails: React.FC = () => {
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <span>{product.price}</span>
             </ProductItem>
           ))}
         </ProductsContainer>

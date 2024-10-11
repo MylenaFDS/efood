@@ -39,10 +39,12 @@ export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerP
 
 
 export const RestaurantImage = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
+width: 304px;
+height: 167px;
+top: 506px;
+left: 179px;
+gap: 0px;
+opacity: 0px;
 `;
 
 export const RestaurantTag = styled.h4`
@@ -83,6 +85,7 @@ export const ProductsContainer = styled.div`
   gap: 20px;
   width: 100%;
   max-width: 1024px;
+  top:30px;
   margin: 0 auto; /* Centraliza o contêiner na página */
   padding: 20px; /* Adiciona espaço interno */
   position: relative; /* Remove o position: absolute para que o contêiner fique no fluxo normal */
@@ -94,23 +97,36 @@ export const ProductItem = styled.div`
   flex: 1 1 200px;
   border: 1px solid ${cores.coral};
   padding: 10px;
-  text-align: center;
+  text-align: left;
+  font-family: 'Roboto';
   width:320px;
   height:338px;
   top:336px;
+  background: ${cores.coral};
   img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 167px;
   }
 
   h3 {
-    margin: 10px 0;
-    color: ${cores.coralDark};
+    
+    font-family: Roboto;
+font-size: 16px;
+font-weight: 900;
+line-height: 18.75px;
+text-align: left;
+color: ${cores.creme};
   }
 
   p {
-    color: ${cores.coral};
+    margin-top:10px;
+    color: ${cores.creme};
+    font-family: Roboto;
+font-size: 14px;
+font-weight: 400;
+line-height: 22px;
+text-align: left;
+
   }
 
   span {
