@@ -80,17 +80,15 @@ export const RestaurantTitle = styled.h2`
 export const ProductsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
-  flex-wrap: wrap;
   gap: 20px;
-position: absolute;
-width: 1024px;
-height: 708px;
-
-top: 498px;
-left: 50%;
-transform: translateX(-50%);
-
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto; /* Centraliza o contêiner na página */
+  padding: 20px; /* Adiciona espaço interno */
+  position: relative; /* Remove o position: absolute para que o contêiner fique no fluxo normal */
+  opacity: 1; /* Ajuste a opacidade conforme necessário */
 `;
+
 
 export const ProductItem = styled.div`
   flex: 1 1 200px;
@@ -99,6 +97,7 @@ export const ProductItem = styled.div`
   text-align: center;
   width:320px;
   height:338px;
+  top:336px;
   img {
     width: 100%;
     height: auto;
