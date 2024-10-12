@@ -126,7 +126,11 @@ font-size: 14px;
 font-weight: 400;
 line-height: 22px;
 text-align: left;
-
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+    -webkit-line-clamp: 3; /* Número de linhas desejadas antes das reticências */
+    -webkit-box-orient: vertical;
   }
 
   span {
