@@ -83,8 +83,8 @@ const restaurants: Restaurant[] = [
             new Product(
                 'Yakitori',
                 'Espetinhos de frango grelhados e caramelizados com molho tare, com um toque de cebolinha. Macio por dentro e levemente crocante por fora, ideal para petiscar.',
-                'R$ 20,00',
                 'de 1 a 2 pessoas',
+                'R$ 20,00',
                 Yakitori
             ),
             new Product(

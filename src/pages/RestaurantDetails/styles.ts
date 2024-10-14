@@ -156,10 +156,9 @@ export const PopupOverlay = styled.div`
 export const ProductPopup = styled.div`
   display: flex;
   background: #E66767;
-  width: 800px;
-  max-width: 90%;
+  width: 1024px;
+  max-width: 100%;
   padding: 20px;
-  border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   gap: 20px; /* Espaçamento entre a imagem e as informações */
 `;
@@ -168,14 +167,29 @@ export const ProductImage = styled.img`
   width: 280px;
   height: 280px;
   object-fit: cover;
-  border-radius: 8px;
 `;
 
 export const ProductInfo = styled.div`
+  width:656px;
+  height:200px;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Para manter o botão sempre na parte inferior */
   flex: 1;
+  button{
+    width: 218px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+    
+    font-family: 'Roboto',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.41px;
+    text-align: center;
+
+  }
 `;
 
 export const CloseButton = styled.button`
