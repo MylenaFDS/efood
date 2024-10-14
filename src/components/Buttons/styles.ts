@@ -53,3 +53,19 @@ export const ButtonLink = styled(Link)`
   margin: 8px;  /* Substitui 'left' para melhor controle */
   
 `;
+
+export const AddToCartButton = styled.button`
+  background-color:#fff;
+  color: #e66767;
+  border: none;
+  width:100%;
+  height:24px;
+  margin-top: 30px;
+  font-family: 'Roboto',sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.41px;
+  text-align: center;
+  cursor: pointer;
+`;
+

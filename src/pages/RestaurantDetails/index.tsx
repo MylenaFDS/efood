@@ -9,6 +9,7 @@ import {
   ProductItem,
 } from './styles';
 import restaurants from '../../data/restaurants';
+import { AddToCartButton } from '../../components/Buttons/styles';
 
 
 const RestaurantDetails: React.FC = () => {
@@ -35,6 +36,9 @@ const RestaurantDetails: React.FC = () => {
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
+              <AddToCartButton>
+                Adicionar ao carrinho
+              </AddToCartButton>
             </ProductItem>
           ))}
         </ProductsContainer>

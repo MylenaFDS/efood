@@ -97,55 +97,55 @@ const restaurants: Restaurant[] = [
         ]
     ),
     new Restaurant(
-        2,
-        'La Dolce Vita Trattoria',
-        LaDolceVitaTrattoria,
-        'Italiana',
-        [
-            new Product(
-                'Spaghetti Carbonara',
-                'Spaghetti com molho à base de ovos, queijo parmesão, pancetta e pimenta-do-reino.',
-                'Serve de 1 a 2 pessoas',
-                'R$ 38,00',
-                Spaghetti
-            ),
-            new Product(
-                'Tiramisu',
-                'Deliciosa sobremesa italiana com café, mascarpone e cacau.',
-                'Serve de 2 a 4 pessoas',
-                'R$ 18,00',
-                Tiramisu
-            ),
-            new Product(
-                'Lasagna',
-                'Um prato em camadas feito com folhas de massa, carne moída, molho de tomate, queijo ricota e mozzarella.',
-                'Serve de 2 a 4 pessoas',
-                'R$ 18,00',
-                Lasagna
-            ),
-            new Product(
-                'Risotto',
-                'Um prato de arroz cremoso, cozido lentamente em caldo. Possui com uma variedade de ingredientes, como cogumelos, frutos do mar e legumes.',
-                'Serve de 1 a 2 pessoas',
-                'R$ 18,00',
-                Risotto
-            ),
-            new Product(
-                'Pizza Quatro Queijos',
-                'Uma deliciosa combinação de queijos que derrete na boca, preparada com nossa massa fina e crocante, assada à perfeição. Coberta com molho de tomate artesanal, enriquecido com um blend de queijos selecionados: mozzarella cremosa, gorgonzola picante, parmesão ralado na hora e cremoso requeijão. Cada mordida oferece um equilíbrio perfeito entre a suavidade da mozzarella, o sabor intenso do gorgonzola, a riqueza do parmesão e a maciez do requeijão, resultando em uma experiência única para os amantes de queijos. Servida quente, perfeita para acompanhar com uma taça de vinho branco ou uma cerveja leve. Ideal para compartilhar com quem você gosta, mas tentadora o suficiente para manter só para você!',
-                'Serve: 3 a 4 pessoas',
-                'R$ 18,00',
-                Pizza
-            ),
-            new Product(
-                'Focaccia',
-                'Um clássico da panificação italiana, a focaccia é um pão de massa leve e macia, caracterizado por uma textura aerada e uma crosta dourada levemente crocante. Assada com generosos fios de azeite de oliva extra virgem, que realçam seu sabor e garantem uma superfície dourada e ligeiramente crocante. Tradicionalmente, é polvilhada com sal grosso e aromatizada com alecrim fresco, que trazem um toque perfumado irresistível a cada mordida. Pode ser apreciada sozinha como entrada, acompanhada de queijos e frios, ou usada como base para sanduíches gourmet. Ideal para compartilhar, a focaccia traz a simplicidade e os sabores autênticos da Itália à mesa, perfeita para ser combinada com uma taça de vinho ou uma seleção de antipasti.',
-                'Serve: 2 a 4 pessoas',
-                'R$ 18,00',
-                Focaccia
-            )
-        ]
-    ),
+    2,
+    'La Dolce Vita Trattoria',
+    LaDolceVitaTrattoria,
+    'Italiana',
+    [
+        new Product(
+            'Spaghetti Carbonara',
+            'Um clássico italiano, feito com spaghetti al dente, envolto em um molho cremoso à base de ovos, queijo parmesão e pancetta crocante. A pimenta-do-reino adiciona um toque picante e aromático ao prato, elevando seu sabor. Ideal para quem busca uma refeição rica e reconfortante.',
+            'Serve: 1 a 2 pessoas',
+            'R$ 38,00',
+            Spaghetti
+        ),
+        new Product(
+            'Tiramisu',
+            'Deliciosa sobremesa italiana, preparada em camadas de biscoitos embebidos em café fresco, intercaladas com um creme suave de mascarpone. Finalizada com uma generosa camada de cacau polvilhado, que traz um toque levemente amargo. Perfeita para os amantes de doces refinados e equilibrados.',
+            'Serve: 2 a 4 pessoas',
+            'R$ 18,00',
+            Tiramisu
+        ),
+        new Product(
+            'Lasagna',
+            'Um prato em camadas, com folhas de massa fresca alternadas com molho de tomate rústico e carne moída temperada. Recheada com uma mistura de ricota cremosa e mozzarella derretida, coberta por uma camada dourada de queijo gratinado. Saboroso e aconchegante, ideal para um almoço em família.',
+            'Serve: 2 a 4 pessoas',
+            'R$ 18,00',
+            Lasagna
+        ),
+        new Product(
+            'Risotto',
+            'Arroz cremoso, cozido lentamente em um rico caldo aromático, que traz uma textura aveludada ao prato. Pode ser preparado com ingredientes frescos como cogumelos, frutos do mar ou legumes sazonais. Cada garfada oferece uma explosão de sabor e cremosidade, típica da cozinha italiana.',
+            'Serve: 1 a 2 pessoas',
+            'R$ 18,00',
+            Risotto
+        ),
+        new Product(
+            'Pizza Quatro Queijos',
+            'Uma deliciosa combinação de queijos sobre uma massa fina e crocante, assada à perfeição. O molho de tomate artesanal complementa a mistura de mozzarella, gorgonzola, parmesão e requeijão. Cada fatia traz um equilíbrio perfeito entre os sabores, ideal para compartilhar em momentos especiais.',
+            'Serve: 3 a 4 pessoas',
+            'R$ 18,00',
+            Pizza
+        ),
+        new Product(
+            'Focaccia',
+            'Pão italiano macio e aerado, com uma crosta dourada e levemente crocante, realçada por fios de azeite de oliva extra virgem. Salpicada com sal grosso e alecrim fresco, a focaccia é perfumada e saborosa. Excelente como entrada ou para acompanhar queijos e frios em um momento de descontração.',
+            'Serve: 2 a 4 pessoas',
+            'R$ 18,00',
+            Focaccia
+        )
+    ]
+),
     new Restaurant(
     3,
     'Sabores da Terra',
