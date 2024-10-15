@@ -98,9 +98,20 @@ export const RestaurantTitle = styled.h2`
   color: #FFFFFF;
   margin-left: 170px;
   opacity: 1;
-  position: relative; 
-  z-index: 2; 
 
+  z-index: 2; 
+  
+
+  position: absolute;
+  width: 676px;
+  height: 33.25px;
+  left: 170px;
+  
+  
+  font-family: 'Roboto';
+  align-items:left;
+  
+  
   /* Media Queries */
   @media (max-width: 768px) {
     font-size: 1.5rem; /* Diminui o tamanho da fonte em telas menores */

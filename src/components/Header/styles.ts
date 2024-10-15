@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { cores } from '../../styles';
-import Vector from '../../assets/images/Vector.svg'
+import Vector from '../../assets/images/Vector.svg';
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -10,8 +10,51 @@ export const HeaderContainer = styled.div`
   width: 100%; /* Ajusta para ocupar toda a largura */
   height: 186px;
   background: ${cores.creme};
-  object-fit:cover;
   background-image: url(${Vector});
+  background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
+`;
+
+export const HeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between; /* Espaça os itens igualmente */
+  align-items: center;
+  width: 100%;
+  max-width: 1024px; /* Ajuste conforme necessário */
+  padding: 0 10px; /* Margem interna */
+  position: relative;
+`;
+
+export const Logo = styled.img`
+  width: 125px;
+  height: 57.5px;
+  background: ${cores.coral}; /* Se precisar de um fundo para a logo */
+`;
+
+export const LinkRestaurants = styled.nav`
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  color: ${cores.coral};
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+`;
+
+export const TextCart = styled.div`
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: right;
+  color: ${cores.coral};
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 export const Fundo = styled.img`
@@ -21,51 +64,5 @@ export const Fundo = styled.img`
   left: 0;
   top: 0;
   object-fit: cover;
-`;
-
-export const Logo = styled.img`
-  position:absolute;
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajusta o deslocamento */
-  width: 125px;
-  height: 57.5px;
-  background: ${cores.coral}; /* Se precisar de um fundo para a logo */
-`;
-
-export const LinkRestaurants = styled.nav`
-  position: absolute;
-  left: 20px; /* Ajuste conforme necessário */
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
-  color: ${cores.coral};
-  a {
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: inherit; /* Mantém a cor do texto */
-  }
-`;
-
-export const TextCart = styled.div`
-  position: absolute;
-  right: 20px; /* Ajuste conforme necessário */
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 18px;
-  line-height: 21px;
-  text-decoration:none;
-  text-align: right;
-  color: ${cores.coral};
-
-  a {
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: inherit; /* Mantém a cor do texto */
-  }
+  z-index: -1; /* Certifica que o fundo fique atrás dos demais itens */
 `;
