@@ -111,27 +111,30 @@ export const RestaurantTitle = styled.h2`
   font-weight: 900;
   margin-bottom: 10px;
   line-height: 37.5px;
-  margin-left: 170px;
   color: #FFFFFF;
   position: absolute;
-  z-index: 2; 
+  left: 170px;
+  z-index: 2;
 
   /* Media Queries */
   @media (max-width: 1024px) {
     font-size: 1.8rem;
-    margin-left: 15px;
+    left: 15px;
   }
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
-    margin-left: 10px;
+    left: 10px;
   }
 
   @media (max-width: 480px) {
     font-size: 1.2rem;
-    margin-left: 5px;
+    left: 5px;
   }
 `;
+
+
+
 
 export const ProductsContainer = styled.div`
   display: grid;
