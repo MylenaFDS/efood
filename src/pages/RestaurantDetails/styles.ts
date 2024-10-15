@@ -8,7 +8,7 @@ interface RestaurantDetailsContainerProps {
 
 export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerProps>`
   margin-top: 300px;
-  max-width:1024px;
+
   width: auto;
   height: 280px;
   margin: 0 auto;
