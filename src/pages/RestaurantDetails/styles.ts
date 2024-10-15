@@ -37,13 +37,13 @@ export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerP
 
   /* Media Queries */
   @media (max-width: 768px) {
-    margin-top: 150px;
+    
     height: 200px;
     padding: 10px;
   }
 
   @media (max-width: 480px) {
-    margin-top: 100px;
+   
     height: 180px;
     padding: 5px;
     flex-direction: column; /* Altera a direção do flex para coluna em telas pequenas */
