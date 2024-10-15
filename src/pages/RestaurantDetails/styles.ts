@@ -8,6 +8,7 @@ interface RestaurantDetailsContainerProps {
 
 export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerProps>`
   margin-top: 300px;
+  max-width:1024px;
   width: auto;
   height: 280px;
   margin: 0 auto;
@@ -36,32 +37,43 @@ export const RestaurantDetailsContainer = styled.div<RestaurantDetailsContainerP
   z-index: 2; 
 
   /* Media Queries */
+  @media (max-width: 1024px) {
+    height: 240px;
+    padding: 15px;
+  }
+
   @media (max-width: 768px) {
-    
     height: 200px;
     padding: 10px;
   }
 
-  @media (max-width: 480px) {
-   
+  @media (max-width: 640px) {
     height: 180px;
+    padding: 8px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 480px) {
+    height: 160px;
     padding: 5px;
-    flex-direction: column; /* Altera a direção do flex para coluna em telas pequenas */
   }
 `;
+
 
 export const RestaurantImage = styled.img`
   width: 304px;
   height: 167px;
-  top: 506px;
-  left: 179px;
-  gap: 0px;
   opacity: 0px;
 
   /* Media Queries */
+  @media (max-width: 1024px) {
+    width: 80%;
+    height: auto;
+  }
+
   @media (max-width: 768px) {
-    width: 100%; /* Adapta a imagem para ocupar 100% da largura */
-    height: auto; /* Mantém a proporção */
+    width: 100%;
+    height: auto;
   }
 `;
 
@@ -69,23 +81,27 @@ export const RestaurantTag = styled.h4`
   position: absolute;
   top: 10px;
   left: 170px;
-
-  height: 33.25px;
-  font-family: Roboto, sans-serif;
   font-size: 32px;
-  font-weight: 100;
-  line-height: 38px;
-  color: #FFFFFF;
-  text-align: left;
   margin-left: 20px;
+  color: #FFFFFF;
   opacity: 0.6;
 
   z-index: 1; 
 
   /* Media Queries */
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    left: 15px;
+  }
+
   @media (max-width: 768px) {
-    font-size: 24px; /* Diminui o tamanho da fonte em telas menores */
-    left: 10px; /* Ajusta a posição em telas menores */
+    font-size: 24px;
+    left: 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+    left: 5px;
   }
 `;
 
@@ -95,27 +111,25 @@ export const RestaurantTitle = styled.h2`
   font-weight: 900;
   margin-bottom: 10px;
   line-height: 37.5px;
-  color: #FFFFFF;
   margin-left: 170px;
-  opacity: 1;
-
-  z-index: 2; 
-  
-
+  color: #FFFFFF;
   position: absolute;
-  width: 676px;
-  height: 33.25px;
-  left: 170px;
-  
-  
-  font-family: 'Roboto';
-  align-items:left;
-  
-  
+  z-index: 2; 
+
   /* Media Queries */
+  @media (max-width: 1024px) {
+    font-size: 1.8rem;
+    margin-left: 15px;
+  }
+
   @media (max-width: 768px) {
-    font-size: 1.5rem; /* Diminui o tamanho da fonte em telas menores */
-    margin-left: 10px; /* Ajusta a margem */
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    margin-left: 5px;
   }
 `;
 
@@ -192,6 +206,7 @@ export const ProductItem = styled.div`
   @media (max-width: 768px) {
     width: 100%; /* Ocupa 100% da largura disponível */
     height: auto; /* Mantém a proporção */
+    overflow-x: hidden;
   }
 `;
 
