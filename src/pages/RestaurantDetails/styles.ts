@@ -116,7 +116,7 @@ export const ProductsContainer = styled.div`
   max-width: 1024px;
   top: 30px;
   margin: 0 auto; 
-  padding: 20px; 
+  padding: 4px; 
   position: relative; 
   opacity: 1; 
 
