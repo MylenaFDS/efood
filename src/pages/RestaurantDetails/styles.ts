@@ -138,6 +138,7 @@ export const ProductsContainer = styled.div`
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr; /* 1 card por linha em telas muito pequenas */
+    width:100%;
   }
 `;
 
