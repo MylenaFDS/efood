@@ -135,26 +135,24 @@ export const RestaurantTitle = styled.h2`
 
 export const ProductsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
   width: 100%;
   max-width: 1024px;
   top: 30px;
-  margin: 0 auto;
+  margin: 0 auto; 
   padding: 0 16px; /* Ajuste para melhorar o espaçamento nas bordas */
-  position: relative;
-  opacity: 1;
+  position: relative; 
+  opacity: 1; 
 
   /* Media Queries */
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas menores */
-    padding: 0 12px; /* Reduz o padding para telas menores */
   }
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr; /* 1 card por linha em telas muito pequenas */
-    width: 100%;
-    padding: 0 8px; /* Ajuste para telas pequenas */
+    width:100%;
   }
 `;
 
@@ -216,7 +214,6 @@ export const ProductItem = styled.div`
     height: auto;
   }
 `;
-
 
 export const PopupOverlay = styled.div`
   position: fixed;
