@@ -135,24 +135,26 @@ export const RestaurantTitle = styled.h2`
 
 export const ProductsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 100%;
   max-width: 1024px;
   top: 30px;
-  margin: 0 auto; 
-  padding: 4px; 
-  position: relative; 
-  opacity: 1; 
+  margin: 0 auto;
+  padding: 0 16px; /* Ajuste para melhorar o espaçamento nas bordas */
+  position: relative;
+  opacity: 1;
 
   /* Media Queries */
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas menores */
+    padding: 0 12px; /* Reduz o padding para telas menores */
   }
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr; /* 1 card por linha em telas muito pequenas */
-    width:100%;
+    width: 100%;
+    padding: 0 8px; /* Ajuste para telas pequenas */
   }
 `;
 
@@ -162,14 +164,15 @@ export const ProductItem = styled.div`
   padding: 10px;
   text-align: left;
   font-family: 'Roboto';
-  width: 320px;
-  height: 338px;
-  top: 336px;
+  width: 100%; /* Ajusta para ocupar 100% da coluna disponível */
+  max-width: 320px; /* Limita a largura máxima para não esticar demais */
+  height: auto; /* Ajusta a altura automaticamente */
   background: ${cores.coral};
 
   img {
     width: 100%;
-    height: 167px;
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 167px;
   }
 
   h3 {
@@ -192,7 +195,7 @@ export const ProductItem = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; 
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
 
@@ -206,9 +209,14 @@ export const ProductItem = styled.div`
   @media (max-width: 768px) {
     width: 100%; /* Ocupa 100% da largura disponível */
     height: auto; /* Mantém a proporção */
-    overflow-x: hidden;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: auto;
   }
 `;
+
 
 export const PopupOverlay = styled.div`
   position: fixed;
