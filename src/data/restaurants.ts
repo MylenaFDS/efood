@@ -1,7 +1,7 @@
 /// src/data/restaurants.ts
 
-import Restaurant from '../models/restaurants';
-import Product from '../models/product';
+import Restaurant from '../modals/restaurants';
+import Product from '../modals/product';
 import HiokiSushi from '../assets/images/HiokiSushi.svg';
 import LaDolceVitaTrattoria from '../assets/images/LaDolceVitaTrattoria.svg';
 import SaboresDaTerra from '../assets/images/SaboresDaTerra.jpg';

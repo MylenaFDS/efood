@@ -2,7 +2,7 @@
 
 import Product from './product';
 
-class RestaurantModel {
+class RestaurantModal {
   id: number;
   name: string;
   rate: string;
@@ -31,4 +31,4 @@ class RestaurantModel {
   }
 }
 
-export default RestaurantModel;
+export default RestaurantModal;
