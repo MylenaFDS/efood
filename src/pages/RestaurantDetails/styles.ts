@@ -135,24 +135,32 @@ export const RestaurantTitle = styled.h2`
 
 export const ProductsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 100%;
   max-width: 1024px;
   top: 30px;
-  margin: 0 auto; 
-  padding: 0 16px; /* Ajuste para melhorar o espaçamento nas bordas */
-  position: relative; 
-  opacity: 1; 
+  margin: 0 auto;
+  padding: 0 16px; 
+  position: relative;
+  opacity: 1;
+
+  /* Centraliza os itens no contêiner */
+  justify-content: center;
+  align-items: center;
 
   /* Media Queries */
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas menores */
+    grid-template-columns: repeat(2, 1fr); 
+    justify-content: center; /* Centraliza os itens no grid */
+    padding: 0 12px;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* 1 card por linha em telas muito pequenas */
-    width:100%;
+    grid-template-columns: 1fr; 
+    justify-content: center; /* Centraliza o único item no grid */
+    width: 100%;
+    padding: 0 8px;
   }
 `;
 
@@ -162,14 +170,15 @@ export const ProductItem = styled.div`
   padding: 10px;
   text-align: left;
   font-family: 'Roboto';
-  width: 100%; /* Ajusta para ocupar 100% da coluna disponível */
-  max-width: 320px; /* Limita a largura máxima para não esticar demais */
-  height: auto; /* Ajusta a altura automaticamente */
+  width: 100%; 
+  max-width: 320px; /* Limita a largura máxima para centralização */
+  height: auto; 
   background: ${cores.coral};
+  margin: 0 auto; /* Centraliza o item dentro da coluna */
 
   img {
     width: 100%;
-    height: auto; /* Mantém a proporção da imagem */
+    height: auto; 
     max-height: 167px;
   }
 
@@ -205,15 +214,19 @@ export const ProductItem = styled.div`
 
   /* Media Queries */
   @media (max-width: 768px) {
-    width: 100%; /* Ocupa 100% da largura disponível */
-    height: auto; /* Mantém a proporção */
+    width: 100%; 
+    height: auto; 
+    margin: 0 auto; /* Centraliza em telas menores */
   }
 
   @media (max-width: 480px) {
     width: 100%;
     height: auto;
+    margin: 0 auto; /* Centraliza em telas muito pequenas */
   }
 `;
+
+
 
 export const PopupOverlay = styled.div`
   position: fixed;
