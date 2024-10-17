@@ -8,7 +8,7 @@ const Rotas: React.FC = () => (
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/perfil" element={<Perfil />} />
-    <Route path="/restaurants/:id" element={<RestaurantDetails />} />
+    <Route path="/restaurantes/:id" element={<RestaurantDetails />} />
   </Routes>
 );
 

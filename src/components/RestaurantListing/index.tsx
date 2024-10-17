@@ -1,39 +1,64 @@
-import React from 'react';
-import { ListingContainer, Restaurant, RestaurantTitle,Rate,TitleAndRateContainer,RateAndStarContainer,Star,RestaurantDescription, Highlight, Tag, RestaurantImage } from './styles';
-import RestaurantModel from '../../modals/RestaurantModal';
-import Button from '../Buttons'; // Importa o novo botão
+import React, { useState } from 'react';
+import {
+  ListingContainer,
+  Restaurant,
+  RestaurantTitle,
+  Rate,
+  TitleAndRateContainer,
+  RateAndStarContainer,
+  Star,
+  RestaurantDescription,
+  Highlight,
+  Tag,
+  RestaurantImage
+} from './styles';
+import RestaurantModal from '../../modals/RestaurantModal';
+import Button from '../Buttons';
+import Modal from '../../modals/modal';
 
 interface RestaurantListingProps {
-  restaurants: RestaurantModel[]; // Define as props esperadas
+  restaurants: RestaurantModal[];
 }
 
-const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) => (
-  <ListingContainer>
-    {restaurants.map((restaurant) => (
-      <Restaurant key={restaurant.id}>
-        {restaurant.highlight && <Highlight>{restaurant.highlight}</Highlight>}
-        <Tag>{restaurant.tag}</Tag>
-        <RestaurantImage src={restaurant.image} alt={restaurant.name} />
+const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantModal | null>(null);
 
-        <TitleAndRateContainer>
-          <RestaurantTitle>{restaurant.name}</RestaurantTitle>
-          
-          {/* Agrupando a nota e a estrela */}
-          <RateAndStarContainer>
-            <Rate>{restaurant.rate}</Rate>
-            <Star src={restaurant.star} alt="Star" />
-          </RateAndStarContainer>
-        </TitleAndRateContainer>
+  const handleOpenModal = (restaurant: RestaurantModal) => {
+    setSelectedRestaurant(restaurant);
+    setIsModalOpen(true);
+  };
 
-        <RestaurantDescription>{restaurant.description}</RestaurantDescription>
-        <Button type="link" title="Saiba mais" to={`/restaurants/${restaurant.id}`}>
-          Saiba mais
-        </Button>
-      </Restaurant>
-    ))}
-  </ListingContainer>
-);
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedRestaurant(null);
+  };
 
+  return (
+    <ListingContainer>
+      {restaurants.map((restaurant) => (
+        <Restaurant key={restaurant.id}>
+          {restaurant.highlight && <Highlight>{restaurant.highlight}</Highlight>}
+          <Tag>{restaurant.tag}</Tag>
+          <RestaurantImage src={restaurant.image} alt={restaurant.name} />
 
+          <TitleAndRateContainer>
+            <RestaurantTitle>{restaurant.name}</RestaurantTitle>
+            <RateAndStarContainer>
+              <Rate>{restaurant.rate}</Rate>
+              <Star src={restaurant.star} alt="Star" />
+            </RateAndStarContainer>
+          </TitleAndRateContainer>
+
+          <RestaurantDescription>{restaurant.description}</RestaurantDescription>
+          <Button type="link" title="Saiba mais" to={`/restaurantes/${restaurant.id}`}>
+            Saiba mais
+          </Button>
+        </Restaurant> // Aqui você fecha a tag Restaurant
+      ))}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} restaurant={selectedRestaurant} />
+    </ListingContainer>
+  );
+};
 
 export default RestaurantListing;

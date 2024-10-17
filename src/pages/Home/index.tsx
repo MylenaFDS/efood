@@ -1,77 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from "../../components/Hero";
 import RestaurantListing from "../../components/RestaurantListing";
-import estrela from '../../assets/images/estrela.jpg'
-import HiokiSushi from '../../assets/images/HiokiSushi.svg';
-import LaDolceVitaTrattoria from '../../assets/images/LaDolceVitaTrattoria.svg';
-import SaboresDaTerra from '../../assets/images/SaboresDaTerra.jpg';
-import LosTacosLocos from '../../assets/images/LosTacosLocos.jpg';
-import LaBelleEpoque from '../../assets/images/LaBelleEpoque.jpg';
-import PalacioDeJade from '../../assets/images/PalacioDeJade.jpg';
-import RestaurantModel  from '../../modals/RestaurantModal';
-const restaurants:RestaurantModel[] = [
-    {
-      id: 1,
-      name: 'Hioki Sushi',
-      rate: '5.0',
-      star: estrela,
-      description: 'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes  irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
-      highlight: 'Destaque da semana',
-      tag: 'Japonesa',
-      image: HiokiSushi
-    },
-    {
-      id: 2,
-      name: 'La Dolce Vita Trattoria',
-      rate: '5.0',
-      star: estrela,
-      description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      tag: 'Italiana',
-      image: LaDolceVitaTrattoria
-    },
-    {
-      id: 3,
-      name: 'Sabores da Terra',
-      rate: '4.8',
-      star: estrela,
-      description: 'Sabores da Terra oferece o melhor da culinária brasileira em sua casa! Desfrute de pratos típicos como feijoada e moqueca, com ingredientes frescos e temperos caseiros. Entrega rápida, porções generosas e sabor autêntico. Peça já!',
-      tag: 'Brasileira',
-      image: SaboresDaTerra
-    },
-    {
-      id: 4,
-      name: 'Los Tacos Locos',
-      rate: '4.5',
-      star: estrela,
-      description: 'Los Tacos Locos oferece tacos frescos, burritos suculentos e guacamole irresistível. Sabor autêntico do México entregue rapidamente à sua porta. Peça já e experimente a festa dos sabores!',
-      tag: 'Mexicana',
-      image: LosTacosLocos
-    },
-    {
-      id: 5,
-      name: 'La Belle Époque',
-      rate: '4.9',
-      star: estrela,
-      description: 'La Belle Époque é um refúgio de elegância, onde a autêntica culinária francesa ganha vida. Saboreie pratos clássicos como escargots, coq au vin e crêpes, preparados com maestria e um toque de tradição. Venha experimentar a essência da França em cada garfada!',
-      tag: 'Francesa',
-      image: LaBelleEpoque
-    },
-    {
-      id: 6,
-      name: 'Palácio de Jade',
-      rate: '4.4',
-      star: estrela,
-      description: 'Palácio de Jade traz o autêntico sabor da China com pratos como pato à Pequim e rolinhos primavera. Sabores tradicionais em um ambiente sofisticado. Experimente agora!',
-      tag: 'Chinesa',
-      image: PalacioDeJade
-    }
-  ]
+import RestaurantModel from '../../modals/RestaurantModal';
 
-const Home = () => (
+const Home = () => {
+  const [restaurantes, setRestaurants] = useState<RestaurantModel[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchRestaurants = async () => {
+      try {
+        const response = await fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes');
+        const data = await response.json();
+        setRestaurants(data); // Ajuste para o formato correto de dados
+      } catch (error) {
+        console.error('Erro ao buscar restaurantes:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRestaurants();
+  }, []);
+
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
+  return (
     <>
-        <Hero />
-        <RestaurantListing restaurants={restaurants} />
+      <Hero />
+      <RestaurantListing restaurants={restaurantes} />
     </>
-);
+  );
+};
 
 export default Home;
+
