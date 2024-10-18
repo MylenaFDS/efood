@@ -3,7 +3,7 @@ import Hero from "../../components/Hero";
 import RestaurantListing from "../../components/RestaurantListing";
 import estrela from '../../assets/images/estrela.jpg'
 import RestaurantModel  from '../../modals/RestaurantModal';
-const restaurants:RestaurantModel[] = [
+const restaurantes:RestaurantModel[] = [
     {
       id: 1,
       name: 'Bella Tavolla Italiana',
