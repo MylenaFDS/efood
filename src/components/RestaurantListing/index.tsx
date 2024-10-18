@@ -50,15 +50,14 @@ const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) =>
             </RateAndStarContainer>
           </TitleAndRateContainer>
 
-        <RestaurantDescription>{restaurant.description}</RestaurantDescription>
-        <Button type="link" title="Saiba mais" to={`/restaurantes/${restaurant.id}`}>
-          Saiba mais
-        </Button>
-      </Restaurant>
-    ))}
-  </ListingContainer>
-);
-
-
+          <RestaurantDescription>{restaurant.description}</RestaurantDescription>
+          <Button type="link" title="Saiba mais" to={`/restaurantes/${restaurant.id}`}>
+            Saiba mais
+          </Button>
+        </Restaurant>
+      ))}
+    </ListingContainer>
+  );
+};
 
 export default RestaurantListing;
