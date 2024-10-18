@@ -2,68 +2,63 @@ import React from 'react';
 import Hero from "../../components/Hero";
 import RestaurantListing from "../../components/RestaurantListing";
 import estrela from '../../assets/images/estrela.jpg'
-import HiokiSushi from '../../assets/images/HiokiSushi.svg';
-import LaDolceVitaTrattoria from '../../assets/images/LaDolceVitaTrattoria.svg';
-import SaboresDaTerra from '../../assets/images/SaboresDaTerra.jpg';
-import LosTacosLocos from '../../assets/images/LosTacosLocos.jpg';
-import LaBelleEpoque from '../../assets/images/LaBelleEpoque.jpg';
-import PalacioDeJade from '../../assets/images/PalacioDeJade.jpg';
 import RestaurantModel  from '../../modals/RestaurantModal';
 const restaurants:RestaurantModel[] = [
     {
       id: 1,
-      name: 'Hioki Sushi',
-      rate: '5.0',
+      name: 'Bella Tavolla Italiana',
+      rate: '	4.7',
       star: estrela,
-      description: 'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes  irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
+      description: 'A paixão dos nossos talentosos chefs pela cozinha italiana é evidente em cada prato, desde massas caseiras e risotos cremosos até suculentos frutos do mar e carnes tenras. Nosso menu é complementado por uma excelente carta de vinhos, cuidadosamente selecionados para harmonizar com a riqueza dos sabores italianos.',
       highlight: 'Destaque da semana',
-      tag: 'Japonesa',
-      image: HiokiSushi
+      tag: 'Italiana',
+      image: 'https://fake-api-tau.vercel.app/efood/bella_tavola_italiana//capa.jpeg'
     },
     {
       id: 2,
-      name: 'La Dolce Vita Trattoria',
-      rate: '5.0',
+      name: 'Casa das Delícias Árabes',
+      rate: '	4.8',
       star: estrela,
-      description: 'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      tag: 'Italiana',
-      image: LaDolceVitaTrattoria
+      description: 'A Casa das Delícias Árabes é um acolhedor e autêntico restaurante árabe, localizado no coração da cidade, que proporciona uma verdadeira experiência culinária do Oriente Médio. O ambiente é decorado com elementos tradicionais e exóticos, criando uma atmosfera convidativa e confortável.',
+      tag: 'Árabe',
+      image: 'https://fake-api-tau.vercel.app/efood/casa_delicias_arabes//capa.jpeg'
     },
     {
       id: 3,
-      name: 'Sabores da Terra',
-      rate: '4.8',
+      name: 'Sakura Sushi House',
+      rate: '4.9',
       star: estrela,
-      description: 'Sabores da Terra oferece o melhor da culinária brasileira em sua casa! Desfrute de pratos típicos como feijoada e moqueca, com ingredientes frescos e temperos caseiros. Entrega rápida, porções generosas e sabor autêntico. Peça já!',
-      tag: 'Brasileira',
-      image: SaboresDaTerra
+      description: 'A Sakura Sushi House é um sofisticado e autêntico restaurante japonês que oferece uma experiência culinária imersiva, transportando os visitantes diretamente para a Terra do Sol Nascente. O ambiente elegante é complementado por um belo jardim japonês, criando uma atmosfera tranquila e serena.',
+      tag: 'Japonês',
+      image: 'https://fake-api-tau.vercel.app/efood/sakura_sushi_house//capa.jpeg'
     },
     {
       id: 4,
-      name: 'Los Tacos Locos',
-      rate: '4.5',
+      name: 'Cantinho Lusitano',
+      rate: '4.8',
       star: estrela,
-      description: 'Los Tacos Locos oferece tacos frescos, burritos suculentos e guacamole irresistível. Sabor autêntico do México entregue rapidamente à sua porta. Peça já e experimente a festa dos sabores!',
-      tag: 'Mexicana',
-      image: LosTacosLocos
+      description: 'O Cantinho Lusitano é um charmoso e tradicional restaurante português, que celebra a rica herança culinária de Portugal. Neste aconchegante espaço, os visitantes podem desfrutar dos autênticos sabores portugueses, preparados com ingredientes frescos e de alta qualidade, respeitando as receitas clássicas.',
+      tag: 'Português',
+      image: 'https://fake-api-tau.vercel.app/efood/cantinho_lusitano//capa.jpeg'
     },
     {
       id: 5,
-      name: 'La Belle Époque',
-      rate: '4.9',
+      name: 'Piazza del Forno',
+      rate: '4.7',
       star: estrela,
-      description: 'La Belle Époque é um refúgio de elegância, onde a autêntica culinária francesa ganha vida. Saboreie pratos clássicos como escargots, coq au vin e crêpes, preparados com maestria e um toque de tradição. Venha experimentar a essência da França em cada garfada!',
-      tag: 'Francesa',
-      image: LaBelleEpoque
+      description: 'A Piazza del Forno é uma pizzaria acolhedora e autêntica que se orgulha de suas raízes italianas. Aqui, você encontrará pizzas artesanais preparadas com ingredientes frescos e assadas em forno a lenha, proporcionando sabores inigualáveis e uma crosta crocante e deliciosa.',
+      tag: 'Pizzaria',
+      image: 'https://fake-api-tau.vercel.app/efood/piazza//capa.png'
     },
     {
       id: 6,
-      name: 'Palácio de Jade',
-      rate: '4.4',
+      name: 'Jardim da Terra',
+      rate: '4.8',
       star: estrela,
-      description: 'Palácio de Jade traz o autêntico sabor da China com pratos como pato à Pequim e rolinhos primavera. Sabores tradicionais em um ambiente sofisticado. Experimente agora!',
-      tag: 'Chinesa',
-      image: PalacioDeJade
+      description: 'O Jardim da Terra é um restaurante vegano que se dedica a oferecer pratos deliciosos e criativos, utilizando apenas ingredientes frescos, orgânicos e sazonais. Nosso cardápio é cuidadosamente elaborado para proporcionar uma experiência culinária única, que celebra a diversidade e a riqueza dos alimentos à base de plantas.',
+      highlight: 'Destaque da semana',
+      tag: 'Vegano',
+      image: 'https://fake-api-tau.vercel.app/efood/jardim_terra//capa.png'
     }
   ]
 

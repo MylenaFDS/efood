@@ -26,7 +26,7 @@ const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) =>
         </TitleAndRateContainer>
 
         <RestaurantDescription>{restaurant.description}</RestaurantDescription>
-        <Button type="link" title="Saiba mais" to={`/restaurants/${restaurant.id}`}>
+        <Button type="link" title="Saiba mais" to={`/restaurantes/${restaurant.id}`}>
           Saiba mais
         </Button>
       </Restaurant>
