@@ -3,7 +3,6 @@
 import Restaurant from '../modals/restaurants';
 import Product from '../modals/product';
 
-
 const restaurants: Restaurant[] = [
     new Restaurant(
         1,

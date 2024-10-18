@@ -13,16 +13,21 @@ import {
   PopupOverlay,
   CloseButton,
 } from './styles';
-import restaurants from '../../data/restaurants';
+import RestaurantModel from '../../modals/RestaurantModal';
+import Product from '../../modals/product';
+
 import { AddToCartButton } from '../../components/Buttons/styles';
+
+// Substitua 'restaurantes' pela sua variável ou estado que contém a lista de restaurantes
+const restaurantes: RestaurantModel[] = []; // Defina a lista de restaurantes aqui
 
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const restaurant = restaurants.find((rest) => rest.id === Number(id));
+  const restaurant = restaurantes.find((rest: RestaurantModel) => rest.id === Number(id));
 
-  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const handleProductClick = (product: any) => {
+  const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
   };
 
@@ -59,21 +64,19 @@ const RestaurantDetails: React.FC = () => {
 
       {selectedProduct && (
         <PopupOverlay onClick={handleClosePopup}>
-        <ProductPopup onClick={(e) => e.stopPropagation()}>
-          <CloseButton onClick={handleClosePopup}>X</CloseButton>
-          <ProductImage src={selectedProduct.image} alt={selectedProduct.name} />
-          <ProductInfo>
-            <h3>{selectedProduct.name}</h3>
-            <p>{selectedProduct.description}</p>
-            <p>Serve: {selectedProduct.quantidade}</p>
-            <AddToCartButton>
-              Adicionar ao carrinho - {selectedProduct.price}
-            </AddToCartButton>
-          </ProductInfo>
-        </ProductPopup>
-      </PopupOverlay>
-      
-      
+          <ProductPopup onClick={(e) => e.stopPropagation()}>
+            <CloseButton onClick={handleClosePopup}>X</CloseButton>
+            <ProductImage src={selectedProduct.image} alt={selectedProduct.name} />
+            <ProductInfo>
+              <h3>{selectedProduct.name}</h3>
+              <p>{selectedProduct.description}</p>
+              <p>Serve: {selectedProduct.quantidade}</p>
+              <AddToCartButton>
+                Adicionar ao carrinho - {selectedProduct.price}
+              </AddToCartButton>
+            </ProductInfo>
+          </ProductPopup>
+        </PopupOverlay>
       )}
     </>
   );

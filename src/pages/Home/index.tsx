@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from "../../components/Hero";
 import RestaurantListing from "../../components/RestaurantListing";
 import estrela from '../../assets/images/estrela.jpg'
@@ -64,9 +64,11 @@ const restaurants:RestaurantModel[] = [
 
 const Home = () => (
     <>
-        <Hero />
-        <RestaurantListing restaurants={restaurants} />
+      <Hero />
+      <RestaurantListing restaurants={restaurantes} />
     </>
 );
 
+
 export default Home;
+

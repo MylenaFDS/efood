@@ -11,6 +11,7 @@ class RestaurantModal {
   highlight?: string; // Opcional, pois nem todos os restaurantes têm destaque
   tag: string;
   image: string;
+  products?: Product[]
 
   constructor(
     id: number,
@@ -20,6 +21,7 @@ class RestaurantModal {
     description: string,
     tag: string,
     image: string,
+    products?: Product[]
   ) {
     this.id = id;
     this.name = name;
@@ -28,6 +30,7 @@ class RestaurantModal {
     this.description = description;
     this.tag = tag;
     this.image = image;
+    this.products = products;
   }
 }
 
