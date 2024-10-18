@@ -1,6 +1,6 @@
 // src/models/restaurants.ts
 
-import Product from './product';
+import Product from './cardapio';
 
 class Restaurant {
     id: number;

@@ -17,10 +17,10 @@ import Button from '../Buttons';
 import Modal from '../../modals/modal';
 
 interface RestaurantListingProps {
-  restaurants: RestaurantModal[];
+  restaurantes: RestaurantModal[];
 }
 
-const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) => {
+const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurantes }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantModal | null>(null);
 
@@ -36,21 +36,21 @@ const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurants }) =>
 
   return (
     <ListingContainer>
-      {restaurants.map((restaurant) => (
+      {restaurantes.map((restaurant) => (
         <Restaurant key={restaurant.id}>
           {restaurant.highlight && <Highlight>{restaurant.highlight}</Highlight>}
           <Tag>{restaurant.tag}</Tag>
-          <RestaurantImage src={restaurant.image} alt={restaurant.name} />
+          <RestaurantImage src={restaurant.capa} alt={restaurant.titulo} />
 
           <TitleAndRateContainer>
-            <RestaurantTitle>{restaurant.name}</RestaurantTitle>
+            <RestaurantTitle>{restaurant.titulo}</RestaurantTitle>
             <RateAndStarContainer>
               <Rate>{restaurant.rate}</Rate>
               <Star src={restaurant.star} alt="Star" />
             </RateAndStarContainer>
           </TitleAndRateContainer>
 
-          <RestaurantDescription>{restaurant.description}</RestaurantDescription>
+          <RestaurantDescription>{restaurant.descricao}</RestaurantDescription>
           <Button type="link" title="Saiba mais" to={`/restaurantes/${restaurant.id}`}>
             Saiba mais
           </Button>

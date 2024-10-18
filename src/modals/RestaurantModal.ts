@@ -1,36 +1,36 @@
 // src/models/Restaurant.ts
 
-import Product from './product';
+import cardapio from './cardapio';
 
 class RestaurantModal {
   id: number;
-  name: string;
+  titulo: string;
   rate: string;
   star: string;
-  description: string;
+  descricao: string;
   highlight?: string; // Opcional, pois nem todos os restaurantes têm destaque
   tag: string;
-  image: string;
-  products?: Product[]
+  capa: string;
+  cardapio?: cardapio[]
 
   constructor(
     id: number,
-    name: string,
+    titulo: string,
     rate: string,
     star: string,
-    description: string,
+    descricao: string,
     tag: string,
-    image: string,
-    products?: Product[]
+    capa: string,
+    cardapio?: cardapio[]
   ) {
     this.id = id;
-    this.name = name;
+    this.titulo = titulo;
     this.rate = rate;
     this.star = star;
-    this.description = description;
+    this.descricao = descricao;
     this.tag = tag;
-    this.image = image;
-    this.products = products;
+    this.capa = capa;
+    this.cardapio = cardapio;
   }
 }
 
