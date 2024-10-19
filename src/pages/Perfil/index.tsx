@@ -63,7 +63,7 @@ const Perfil: React.FC = () => {
     <>
       <Header />
       <RestaurantDetailsContainer backgroundImage={restaurant.capa}>
-        <RestaurantTag>{restaurant.tag}</RestaurantTag>
+        <RestaurantTag>{restaurant.tipo}</RestaurantTag>
         <RestaurantTitle>{restaurant.titulo}</RestaurantTitle>
       </RestaurantDetailsContainer>
 

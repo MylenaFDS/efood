@@ -39,7 +39,7 @@ const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurantes }) =
       {restaurantes.map((restaurant) => (
         <Restaurant key={restaurant.id}>
           {restaurant.highlight && <Highlight>{restaurant.highlight}</Highlight>}
-          <Tag>{restaurant.tag}</Tag>
+          <Tag>{restaurant.tipo}</Tag>
           <RestaurantImage src={restaurant.capa} alt={restaurant.titulo} />
 
           <TitleAndRateContainer>

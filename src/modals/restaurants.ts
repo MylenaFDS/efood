@@ -6,7 +6,7 @@ class Restaurant {
     id: number;
     name: string;
     image: string;
-    tag: string;
+    tipo: string;
     
     products?: Product[]; // Continua opcional
 
@@ -14,13 +14,13 @@ class Restaurant {
         id: number,
         name: string,
         image: string,
-        tag: string,
+        tipo: string,
         products?: Product[]
     ) {
         this.id = id;
         this.name = name;
         this.image = image;
-        this.tag = tag;
+        this.tipo = tipo;
         this.products = products;
     }
 }

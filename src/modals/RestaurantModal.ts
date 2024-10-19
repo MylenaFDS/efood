@@ -9,7 +9,7 @@ class RestaurantModal {
   star: string;
   descricao: string;
   highlight?: string; // Opcional, pois nem todos os restaurantes têm destaque
-  tag: string;
+  tipo: string;
   capa: string;
   cardapio?: cardapio[]
 
@@ -19,7 +19,7 @@ class RestaurantModal {
     rate: string,
     star: string,
     descricao: string,
-    tag: string,
+    tipo: string,
     capa: string,
     cardapio?: cardapio[]
   ) {
@@ -28,7 +28,7 @@ class RestaurantModal {
     this.rate = rate;
     this.star = star;
     this.descricao = descricao;
-    this.tag = tag;
+    this.tipo = tipo;
     this.capa = capa;
     this.cardapio = cardapio;
   }
