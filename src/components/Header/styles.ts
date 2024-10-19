@@ -30,7 +30,7 @@ export const HeaderContent = styled.div`
   max-width: 1024px; /* Ajuste conforme necessário */
   padding: 0 10px; /* Margem interna */
   position: relative;
-
+  left:35px;
   @media (max-width: 768px) {
     padding: 0 20px; /* Aumenta o padding para tablets */
     flex-direction: column; /* Organiza os itens em coluna */
