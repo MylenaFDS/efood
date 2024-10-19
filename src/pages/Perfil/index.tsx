@@ -82,22 +82,24 @@ const Perfil: React.FC = () => {
         </ProductsContainer>
       )}
 
-      {selectedProduct && (
-        <PopupOverlay onClick={handleClosePopup}>
-          <ProductPopup onClick={(e) => e.stopPropagation()}>
-            <CloseButton onClick={handleClosePopup}>X</CloseButton>
-            <ProductImage src={selectedProduct.foto} alt={selectedProduct.nome} />
-            <ProductInfo>
-              <h3>{selectedProduct.nome}</h3>
-              <p>{selectedProduct.descricao}</p>
-              <p>Serve: {selectedProduct.porcao}</p>
-              <AddToCartButton>
-                Adicionar ao carrinho - {selectedProduct.preco}
-              </AddToCartButton>
-            </ProductInfo>
-          </ProductPopup>
-        </PopupOverlay>
-      )}
+{selectedProduct && (
+  <PopupOverlay onClick={handleClosePopup}>
+    <ProductPopup onClick={(e) => e.stopPropagation()}>
+      <CloseButton onClick={handleClosePopup}>X</CloseButton>
+      <ProductImage src={selectedProduct.foto} alt={selectedProduct.nome} />
+      <ProductInfo>
+        <h3>{selectedProduct.nome}</h3>
+        <p>{selectedProduct.descricao}</p>
+        <p>Serve: {selectedProduct.porcao}</p>
+        <AddToCartButton>
+          Adicionar ao carrinho - R$ {selectedProduct.preco}
+        </AddToCartButton>
+      </ProductInfo>
+    </ProductPopup>
+  </PopupOverlay>
+)}
+
+
     </>
   );
 };
