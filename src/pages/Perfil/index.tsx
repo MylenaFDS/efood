@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/Header';
+import { useDispatch } from 'react-redux';
+import { addItemToCart } from '../../store/cartSlice';
 import {
   RestaurantDetailsContainer,
   RestaurantTitle,
@@ -11,26 +13,26 @@ import {
   ProductImage,
   ProductInfo,
   PopupOverlay,
-  CloseButton,
 } from './styles';
 import RestaurantModel from '../../modals/RestaurantModal';
 import Product from '../../modals/cardapio';
-
 import { AddToCartButton } from '../../components/Buttons/styles';
+import Cart from '../../components/Cart'; // Importando o novo Cart
 
-// Substitua 'restaurantes' pela sua variável ou estado que contém a lista de restaurantes
 const Perfil: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [restaurantes, setRestaurantes] = useState<RestaurantModel[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false); // Estado para gerenciar a exibição do carrinho
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes'); // Substitua pela URL da sua API
+        const response = await fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes');
         const data = await response.json();
-        setRestaurantes(data); // Ajuste conforme a estrutura dos dados
+        setRestaurantes(data);
       } catch (error) {
         console.error('Erro ao buscar restaurantes:', error);
       } finally {
@@ -49,6 +51,15 @@ const Perfil: React.FC = () => {
 
   const handleClosePopup = () => {
     setSelectedProduct(null);
+  };
+
+  const handleAddToCart = (product: Product) => {
+    dispatch(addItemToCart(product));
+    setSelectedProduct(null);
+  };
+
+  const handleCartToggle = () => {
+    setIsCartOpen(!isCartOpen); // Alterna a exibição do carrinho
   };
 
   if (loading) {
@@ -74,35 +85,37 @@ const Perfil: React.FC = () => {
               <img src={cardapio.foto} alt={cardapio.nome} />
               <h3>{cardapio.nome}</h3>
               <p>{cardapio.descricao}</p>
-              <AddToCartButton>
-                Adicionar ao carrinho
-              </AddToCartButton>
+              <AddToCartButton onClick={handleCartToggle}>Abrir Carrinho</AddToCartButton>
             </ProductItem>
           ))}
         </ProductsContainer>
       )}
 
-{selectedProduct && (
-  <PopupOverlay onClick={handleClosePopup}>
-    <ProductPopup onClick={(e) => e.stopPropagation()}>
-      <CloseButton onClick={handleClosePopup}>X</CloseButton>
-      <ProductImage src={selectedProduct.foto} alt={selectedProduct.nome} />
-      <ProductInfo>
-        <h3>{selectedProduct.nome}</h3>
-        <p>{selectedProduct.descricao}</p>
-        <p>Serve: {selectedProduct.porcao}</p>
-        <AddToCartButton>
-          Adicionar ao carrinho - R$ {selectedProduct.preco}
-        </AddToCartButton>
-      </ProductInfo>
-    </ProductPopup>
-  </PopupOverlay>
-)}
+      {selectedProduct && (
+        <PopupOverlay onClick={handleClosePopup}>
+          <ProductPopup onClick={(e) => e.stopPropagation()}>
+            
+            <ProductImage src={selectedProduct.foto} alt={selectedProduct.nome} />
+            <ProductInfo>
+              <h3>{selectedProduct.nome}</h3>
+              <p>{selectedProduct.descricao}</p>
+              <p>Serve: {selectedProduct.porcao}</p>
+              <AddToCartButton onClick={() => handleAddToCart(selectedProduct)}>
+                Adicionar ao carrinho - R$ {selectedProduct.preco}
+              </AddToCartButton>
+            </ProductInfo>
+          </ProductPopup>
+        </PopupOverlay>
+      )}
 
-
+      {/* Exibe o carrinho se estiver aberto */}
+      {isCartOpen && <Cart onClose={handleCartToggle} />}
     </>
   );
 };
 
 export default Perfil;
+
+
+
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ListingContainer,
   Restaurant,
@@ -14,25 +14,13 @@ import {
 } from './styles';
 import RestaurantModal from '../../modals/RestaurantModal';
 import Button from '../Buttons';
-import Modal from '../../modals/modal';
+
 
 interface RestaurantListingProps {
   restaurantes: RestaurantModal[];
 }
 
 const RestaurantListing: React.FC<RestaurantListingProps> = ({ restaurantes }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedRestaurant, setSelectedRestaurant] = useState<RestaurantModal | null>(null);
-
-  const handleOpenModal = (restaurant: RestaurantModal) => {
-    setSelectedRestaurant(restaurant);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedRestaurant(null);
-  };
 
   return (
     <ListingContainer>

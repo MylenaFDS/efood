@@ -5,10 +5,10 @@ class cardapio {
     nome: string;
     descricao: string;
     porcao:string;
-    preco: string;
+    preco: number;
     foto: string;
     
-    constructor(id:number,nome: string, descricao: string, porcao:string,  preco: string, foto: string) {
+    constructor(id:number,nome: string, descricao: string, porcao:string,  preco: number, foto: string) {
       this.id = id;
       this.nome = nome;
       this.descricao = descricao;

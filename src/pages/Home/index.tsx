@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Hero from "../../components/Hero";
 import RestaurantListing from "../../components/RestaurantListing";
 import estrela from '../../assets/images/estrela.jpg'
