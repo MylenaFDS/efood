@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { HeaderContainer, HeaderContent, Fundo, Logo, LinkRestaurants, TextCart } from "./styles";
+import { HeaderContainer, HeaderContent, Fundo, Logo, LinkRestaurants, TextCart, Overlay } from "./styles"; // Importar o Overlay
 import logo from '../../assets/images/logo.svg';
 import Vector from '../../assets/images/Vector.svg';
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { RootState } from "../../store/store";
 import Cart from "../Cart";
 
 const Header: React.FC = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false); // Estado para controlar a abertura do carrinho
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const toggleCart = () => {
@@ -30,13 +30,14 @@ const Header: React.FC = () => {
 
           <Logo src={logo} alt="Logo" />
 
-          <TextCart onClick={toggleCart}> {/* Adicione onClick ao TextCart */}
+          <TextCart onClick={toggleCart}>
             {cartItems.length} produto(s) no carrinho
           </TextCart>
         </HeaderContent>
       </HeaderContainer>
 
-      {isCartOpen && <Cart onClose={closeCart} />} {/* Renderiza o carrinho quando isCartOpen é true */}
+      {isCartOpen && <Overlay />} {/* Adiciona o overlay quando o carrinho está aberto */}
+      {isCartOpen && <Cart onClose={closeCart} />}
     </>
   );
 };

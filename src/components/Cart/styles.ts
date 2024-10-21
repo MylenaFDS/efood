@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { cores } from '../../styles';
 
 // Contêiner principal da página de carrinho
 export const CartContainer = styled.div`
@@ -6,6 +7,7 @@ export const CartContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background: #000000CC;
 `;
 
 // Título da página de carrinho
@@ -84,16 +86,28 @@ export const CheckoutButton = styled.button`
 `;
 
 export const CartSidebarContainer = styled.div`
+position: fixed;
+right: 0;
+top: 0;
+width: 300px; // Defina a largura que preferir
+height: 100%;
+background-color: white; // Cor de fundo
+box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+padding: 20px;
+z-index: 1000; // Certifique-se de que a barra lateral fique acima de outros componentes
+transition: transform 0.3s ease;
+background-color:${cores.coral};
+`;
+
+export const Overlay = styled.div`
   position: fixed;
-  right: 0;
   top: 0;
-  width: 300px; // Defina a largura que preferir
-  height: 100%;
-  background-color: white; // Cor de fundo
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  z-index: 1000; // Certifique-se de que a barra lateral fique acima de outros componentes
-  transition: transform 0.3s ease;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000CC; /* Cor escura com opacidade */
+  z-index: 999; /* Deve estar abaixo do carrinho, mas acima de outros conteúdos */
+  transition: opacity 0.3s ease; /* Efeito de transição se necessário */
 `;
 
 export const CloseButton = styled.button`

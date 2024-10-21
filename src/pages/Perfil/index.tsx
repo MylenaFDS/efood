@@ -56,6 +56,7 @@ const Perfil: React.FC = () => {
   const handleAddToCart = (product: Product) => {
     dispatch(addItemToCart(product));
     setSelectedProduct(null);
+    setIsCartOpen(true); // Abre o carrinho ao adicionar um produto
   };
 
   const handleCartToggle = () => {
@@ -85,7 +86,9 @@ const Perfil: React.FC = () => {
               <img src={cardapio.foto} alt={cardapio.nome} />
               <h3>{cardapio.nome}</h3>
               <p>{cardapio.descricao}</p>
-              <AddToCartButton onClick={handleCartToggle}>Abrir Carrinho</AddToCartButton>
+              <AddToCartButton>
+                Adicionar ao carrinho
+              </AddToCartButton>
             </ProductItem>
           ))}
         </ProductsContainer>
@@ -94,7 +97,6 @@ const Perfil: React.FC = () => {
       {selectedProduct && (
         <PopupOverlay onClick={handleClosePopup}>
           <ProductPopup onClick={(e) => e.stopPropagation()}>
-            
             <ProductImage src={selectedProduct.foto} alt={selectedProduct.nome} />
             <ProductInfo>
               <h3>{selectedProduct.nome}</h3>
@@ -115,6 +117,7 @@ const Perfil: React.FC = () => {
 };
 
 export default Perfil;
+
 
 
 

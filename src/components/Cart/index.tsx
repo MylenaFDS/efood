@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import {
-  CartContainer,         // Renomeado de CartSidebarContainer
+  CartSidebarContainer, // Renomeado de CartContainer
   CartTitle,
   EmptyCartMessage,
   CartItemsList,
@@ -23,7 +23,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   const totalAmount = useSelector((state: RootState) => state.cart.totalAmount);
 
   return (
-    <CartContainer>
+    <CartSidebarContainer>
       <CloseButton onClick={onClose}>X</CloseButton>
       <CartTitle>Carrinho</CartTitle>
       {cartItems.length === 0 ? (
@@ -42,7 +42,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
           <CheckoutButton>Finalizar compra</CheckoutButton>
         </>
       )}
-    </CartContainer>
+    </CartSidebarContainer>
   );
 };
 
