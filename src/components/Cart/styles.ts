@@ -14,8 +14,6 @@ export const CartContainer = styled.div`
 
 // Mensagem de carrinho vazio
 export const EmptyCartMessage = styled.p`
-  font-size: 1.2rem;
-  color: #777;
   text-align: center;
 `;
 

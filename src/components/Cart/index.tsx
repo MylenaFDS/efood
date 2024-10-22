@@ -25,7 +25,12 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   return (
     <CartSidebarContainer>
       {cartItems.length === 0 ? (
-        <EmptyCartMessage>O carrinho está vazio.</EmptyCartMessage>
+        <EmptyCartMessage><TotalAmount>
+        <span>Valor total:</span>
+        <span>R$ {totalAmount.toFixed(2)}</span>
+      </TotalAmount>
+
+      <CheckoutButton>Continuar com a entrega</CheckoutButton></EmptyCartMessage>
       ) : (
         <>
           <CartItemsList>
