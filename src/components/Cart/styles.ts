@@ -94,12 +94,19 @@ color: ${cores.coral};
 `;
 
 // Total geral do carrinho
-export const TotalAmount = styled.h2`
-  font-size: 1.5rem;
-  margin-top: 20px;
-  text-align: right;
-  color: #333;
+export const TotalAmount = styled.div`
+  display: flex;
+  justify-content: space-between; /* Distribui os itens entre os lados */
+  align-items: center;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+ 
+  margin-top: 20px; /* Espaço acima do total */
+  color: #fff;
 `;
+
 
 // Botão de finalizar compra
 export const CheckoutButton = styled.button`
