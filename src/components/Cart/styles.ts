@@ -105,36 +105,46 @@ export const TotalAmount = styled.div`
 // Botão de finalizar compra
 export const CheckoutButton = styled.button`
   width: 100%;
-  max-width: 300px;
-  margin: 20px auto;
-  padding: 15px;
-  background-color: #e66767;
-  color: #fff;
-  font-size: 1.2rem;
+  max-width: 344px;
+  height:24px;
+  margin: auto;
+  padding: 0;
+  background-color: #fff;
+  color: ${cores.coral};
+  font-size: 14px;
   border: none;
   cursor: pointer;
   display: block;
   text-align: center;
-  border-radius: 5px;
+font-family: Roboto,sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 16px;
 
-  &:hover {
-    background-color: #d55555;
-  }
+
+
+
+
+
 `;
 
 export const CartSidebarContainer = styled.div`
-position: fixed;
-right: 0;
-top: 0;
-width: 360px; // Defina a largura que preferir
-height: 100%;
-background-color: white; // Cor de fundo
-box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-padding: 32px 8px 8px;
-z-index: 1000; // Certifique-se de que a barra lateral fique acima de outros componentes
-transition: transform 0.3s ease;
-background-color:${cores.coral};
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 360px; // Defina a largura que preferir
+  height: 100%;
+  background-color: white; // Cor de fundo
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  padding: 32px 8px 8px;
+  z-index: 1000; // Certifique-se de que a barra lateral fique acima de outros componentes
+  transition: transform 0.3s ease;
+  background-color: ${cores.coral};
+  overflow-y: auto; /* O scroll só aparece quando necessário */
+  overflow-x: hidden;
 `;
+
 
 export const Overlay = styled.div`
   position: fixed;
@@ -147,13 +157,4 @@ export const Overlay = styled.div`
   transition: opacity 0.3s ease; /* Efeito de transição se necessário */
 `;
 
-export const CloseButton = styled.button`
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: red; // Cor do botão de fechar
-`;
+

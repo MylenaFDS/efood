@@ -40,11 +40,11 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
             ))}
           </CartItemsList>
           <TotalAmount>
-  <span>Valor total:</span>
-  <span>R$ {totalAmount.toFixed(2)}</span>
-</TotalAmount>
+            <span>Valor total:</span>
+            <span>R$ {totalAmount.toFixed(2)}</span>
+          </TotalAmount>
 
-          <CheckoutButton>Finalizar compra</CheckoutButton>
+          <CheckoutButton>Continuar com a entrega</CheckoutButton>
         </>
       )}
     </CartSidebarContainer>
