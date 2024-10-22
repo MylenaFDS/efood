@@ -10,13 +10,7 @@ export const CartContainer = styled.div`
   background: #000000CC;
 `;
 
-// Título da página de carrinho
-export const CartTitle = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333;
-`;
+
 
 // Mensagem de carrinho vazio
 export const EmptyCartMessage = styled.p`

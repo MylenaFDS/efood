@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import {
   CartSidebarContainer, // Renomeado de CartContainer
-  CartTitle,
   EmptyCartMessage,
   CartItemsList,
   CartItem,
@@ -25,7 +24,6 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 
   return (
     <CartSidebarContainer>
-      <CartTitle>Carrinho</CartTitle>
       {cartItems.length === 0 ? (
         <EmptyCartMessage>O carrinho está vazio.</EmptyCartMessage>
       ) : (
