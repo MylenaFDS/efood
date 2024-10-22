@@ -106,7 +106,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background-color: #000000CC; /* Cor escura com opacidade */
-  z-index: 999; /* Deve estar abaixo do carrinho, mas acima de outros conteúdos */
+  z-index: 1; /* Deve estar abaixo do carrinho, mas acima de outros conteúdos */
   transition: opacity 0.3s ease; /* Efeito de transição se necessário */
 `;
 

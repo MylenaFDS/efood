@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { HeaderContainer, HeaderContent, Fundo, Logo, LinkRestaurants, TextCart, Overlay } from "./styles"; // Importar o Overlay
+import { HeaderContainer, HeaderContent, Fundo, Logo, LinkRestaurants, TextCart, OverlayCart } from "./styles"; // Importar o Overlay
 import logo from '../../assets/images/logo.svg';
 import Vector from '../../assets/images/Vector.svg';
 import { Link } from "react-router-dom";
@@ -36,8 +36,12 @@ const Header: React.FC = () => {
         </HeaderContent>
       </HeaderContainer>
 
-      {isCartOpen && <Overlay />} {/* Adiciona o overlay quando o carrinho está aberto */}
-      {isCartOpen && <Cart onClose={closeCart} />}
+      {isCartOpen && (
+        <>
+          <OverlayCart onClick={closeCart} /> {/* Chama closeCart ao clicar no overlay */}
+          <Cart onClose={closeCart} />
+        </>
+      )}
     </>
   );
 };

@@ -103,7 +103,7 @@ export const TextCart = styled.div`
     text-align: center; /* Centraliza o texto */
   }
 `;
-export const Overlay = styled.div`
+export const OverlayCart = styled.div`
   position: fixed;
   top: 0;
   left: 0;

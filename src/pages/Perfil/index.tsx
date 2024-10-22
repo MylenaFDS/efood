@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/Header';
+import { OverlayCart } from '../../components/Header/styles'; // Você pode manter essa importação se precisar do estilo do overlay
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../store/cartSlice';
 import {
@@ -24,8 +25,11 @@ const Perfil: React.FC = () => {
   const [restaurantes, setRestaurantes] = useState<RestaurantModel[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [isCartOpen, setIsCartOpen] = useState<boolean>(false); // Estado para gerenciar a exibição do carrinho
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const dispatch = useDispatch();
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
 
   useEffect(() => {
     const fetchRestaurants = async () => {
@@ -56,11 +60,11 @@ const Perfil: React.FC = () => {
   const handleAddToCart = (product: Product) => {
     dispatch(addItemToCart(product));
     setSelectedProduct(null);
-    setIsCartOpen(true); // Abre o carrinho ao adicionar um produto
+    setIsCartOpen(true);
   };
 
   const handleCartToggle = () => {
-    setIsCartOpen(!isCartOpen); // Alterna a exibição do carrinho
+    setIsCartOpen(!isCartOpen);
   };
 
   if (loading) {
@@ -110,8 +114,12 @@ const Perfil: React.FC = () => {
         </PopupOverlay>
       )}
 
-      {/* Exibe o carrinho se estiver aberto */}
-      {isCartOpen && <Cart onClose={handleCartToggle} />}
+      {isCartOpen && (
+        <>
+          <OverlayCart onClick={closeCart} /> {/* Chama closeCart ao clicar no overlay */}
+          <Cart onClose={closeCart} />
+        </>
+      )}
     </>
   );
 };
