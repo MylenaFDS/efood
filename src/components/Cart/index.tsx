@@ -33,12 +33,12 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
           <CartItemsList>
             {cartItems.map((item, index) => (
               <CartItem key={index}>
-              <ProductImage src={item.foto} alt={item.nome} />
-              <ProductInfo>
-                <ProductName>{item.nome}</ProductName>
-                <ProductPrice>R$ {item.preco.toFixed(2)}</ProductPrice>
-              </ProductInfo>
-            </CartItem>
+                <ProductImage src={item.foto} alt={item.nome} />
+                <ProductInfo>
+                  <ProductName>{item.nome}</ProductName>
+                  <ProductPrice>R$ {item.preco.toFixed(2)}</ProductPrice>
+                </ProductInfo>
+              </CartItem>
             ))}
           </CartItemsList>
           <TotalAmount>Total: R$ {totalAmount.toFixed(2)}</TotalAmount>

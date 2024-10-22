@@ -38,12 +38,12 @@ export const CartItem = styled.li`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start; /* Alinha os itens no topo */
-  padding: 15px 0;
+  padding: 8px;
   border-bottom: 1px solid #ddd;
-  width: 340px;
+  width: 344px;
   background: #fff;
-  margin-bottom: 20px; /* Espaço entre os itens */
- 
+  margin:0px 0px 16px;
+
   &:last-child {
     border-bottom: none;
     margin-bottom: 0; /* Remove o espaço do último item */
@@ -56,8 +56,8 @@ export const ProductImage = styled.img`
 
   width: 80px; /* Defina a largura desejada */
   height: 80px; /* Defina a altura desejada */
-  margin-right: 10px; /* Espaço entre a imagem e o texto */
-  margin-left:10px;
+  
+  
 `;
 export const ProductInfo = styled.div`
   display: flex;
@@ -65,7 +65,7 @@ export const ProductInfo = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0;
-  margin-left: 10px; /* Adiciona um pequeno espaço entre a imagem e o texto */
+  margin: 0px 0px 0px 8px;
 `;
 
 
@@ -73,23 +73,24 @@ export const ProductInfo = styled.div`
 
 // Nome do produto
 export const ProductName = styled.h3`
-font-family: 'Roboto';
+font-family: Roboto,sans-serif;
 font-style: normal;
 font-weight: 900;
 font-size: 18px;
 line-height: 21px;
 text-align: left;
 margin-bottom:20px;
-color: #E66767;
+color: ${cores.coral};
 white-space: nowrap;
 
 `;
 
 // Preço do produto
 export const ProductPrice = styled.p`
-  font-size: 1rem;
-  color: #666;
-  margin-top: 15px; /* Espaçamento entre nome e preço */
+font-family: 'Roboto',sans-serif;
+font-size: 14px;
+margin-top: 5px; /* Espaçamento entre nome e preço */
+color: ${cores.coral};
 `;
 
 // Total geral do carrinho
@@ -128,7 +129,7 @@ width: 360px; // Defina a largura que preferir
 height: 100%;
 background-color: white; // Cor de fundo
 box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-padding: 20px;
+padding: 32px 8px 8px;
 z-index: 1000; // Certifique-se de que a barra lateral fique acima de outros componentes
 transition: transform 0.3s ease;
 background-color:${cores.coral};
