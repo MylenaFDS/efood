@@ -30,24 +30,26 @@ export const CartItemsList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  
+ 
 `;
 
 // Estilo para cada item do carrinho
 export const CartItem = styled.li`
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start; /* Alinha os itens no topo */
   padding: 15px 0;
   border-bottom: 1px solid #ddd;
   width: 340px;
-  height: 100px;
   background: #fff;
-  margin-right:20px;
+  margin-bottom: 20px; /* Espaço entre os itens */
+ 
   &:last-child {
     border-bottom: none;
+    margin-bottom: 0; /* Remove o espaço do último item */
   }
 `;
+
 
 
 export const ProductImage = styled.img`
@@ -61,9 +63,11 @@ export const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0; /* Remover o espaçamento interno */
-  margin: 0; /* Remover o espaçamento entre a imagem e o texto */
+  align-items: flex-start;
+  padding: 0;
+  margin-left: 10px; /* Adiciona um pequeno espaço entre a imagem e o texto */
 `;
+
 
 
 
@@ -75,7 +79,7 @@ font-weight: 900;
 font-size: 18px;
 line-height: 21px;
 text-align: left;
-
+margin-bottom:20px;
 color: #E66767;
 white-space: nowrap;
 
