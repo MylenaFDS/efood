@@ -7,11 +7,12 @@ import {
   EmptyCartMessage,
   CartItemsList,
   CartItem,
+  ProductImage,
+  ProductInfo,
   ProductName,
   ProductPrice,
   TotalAmount,
   CheckoutButton,
-  CloseButton
 } from './styles';
 
 interface CartProps {
@@ -24,7 +25,6 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 
   return (
     <CartSidebarContainer>
-      <CloseButton onClick={onClose}>X</CloseButton>
       <CartTitle>Carrinho</CartTitle>
       {cartItems.length === 0 ? (
         <EmptyCartMessage>O carrinho está vazio.</EmptyCartMessage>
@@ -33,9 +33,12 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
           <CartItemsList>
             {cartItems.map((item, index) => (
               <CartItem key={index}>
+              <ProductImage src={item.foto} alt={item.nome} />
+              <ProductInfo>
                 <ProductName>{item.nome}</ProductName>
                 <ProductPrice>R$ {item.preco.toFixed(2)}</ProductPrice>
-              </CartItem>
+              </ProductInfo>
+            </CartItem>
             ))}
           </CartItemsList>
           <TotalAmount>Total: R$ {totalAmount.toFixed(2)}</TotalAmount>

@@ -30,31 +30,62 @@ export const CartItemsList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  
 `;
 
 // Estilo para cada item do carrinho
 export const CartItem = styled.li`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px 0;
   border-bottom: 1px solid #ddd;
-
+  width: 340px;
+  height: 100px;
+  background: #fff;
+  margin-right:20px;
   &:last-child {
     border-bottom: none;
   }
 `;
 
+
+export const ProductImage = styled.img`
+
+  width: 80px; /* Defina a largura desejada */
+  height: 80px; /* Defina a altura desejada */
+  margin-right: 10px; /* Espaço entre a imagem e o texto */
+  margin-left:10px;
+`;
+export const ProductInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0; /* Remover o espaçamento interno */
+  margin: 0; /* Remover o espaçamento entre a imagem e o texto */
+`;
+
+
+
 // Nome do produto
 export const ProductName = styled.h3`
-  font-size: 1.2rem;
-  color: #333;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 21px;
+text-align: left;
+
+color: #E66767;
+white-space: nowrap;
+
 `;
 
 // Preço do produto
 export const ProductPrice = styled.p`
   font-size: 1rem;
   color: #666;
+  margin-top: 15px; /* Espaçamento entre nome e preço */
 `;
 
 // Total geral do carrinho
@@ -89,7 +120,7 @@ export const CartSidebarContainer = styled.div`
 position: fixed;
 right: 0;
 top: 0;
-width: 300px; // Defina a largura que preferir
+width: 360px; // Defina a largura que preferir
 height: 100%;
 background-color: white; // Cor de fundo
 box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
