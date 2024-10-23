@@ -2,37 +2,33 @@ import styled from 'styled-components';
 import { cores } from '../../styles';
 
 // Contêiner principal da página de carrinho
-export const CartContainer = styled.div`
-  width: 100%;
+export const CartContainer = styled.div
+  `width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background: #000000CC;
-
-  @media (max-width: 768px) {
-    padding: 15px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 10px;
-  }
-`;
+  background: #000000CC;`
+;
 
 // Mensagem de carrinho vazio
-export const EmptyCartMessage = styled.p`
-  text-align: center;
-`;
+export const EmptyCartMessage = styled.p` 
+text-align: center;
+`
+ 
+;
 
 // Lista de itens do carrinho
 export const CartItemsList = styled.ul`
-  list-style: none;
+list-style: none;
   padding: 0;
-  margin: 0;
-`;
+  margin: 0;`
+  
+;
 
 // Estilo para cada item do carrinho
+// Estilo para cada item do carrinho
 export const CartItem = styled.li`
-  display: flex;
+display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px;
@@ -45,34 +41,16 @@ export const CartItem = styled.li`
     border-bottom: none;
     margin-bottom: 0;
   }
+`
+;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 10px;
-  }
 
-  @media (max-width: 480px) {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5px;
-  }
-`;
 
 // Imagem do produto
-export const ProductImage = styled.img`
-  width: 80px;
-  height: 80px;
-
-  @media (max-width: 768px) {
-    width: 60px;
-    height: 60px;
-  }
-
-  @media (max-width: 480px) {
-    width: 50px;
-    height: 50px;
-  }
-`;
+export const ProductImage = styled.img
+  `width: 80px;
+  height: 80px;`
+;
 
 // Informações do produto
 export const ProductInfo = styled.div`
@@ -82,12 +60,13 @@ export const ProductInfo = styled.div`
   align-items: flex-start;
   padding: 0;
   margin: 0px 0px 0px 8px;
-  flex-grow: 1;
-`;
+  flex-grow: 1;`
+  
+;
 
 // Nome do produto
 export const ProductName = styled.h3`
-  font-family: Roboto, sans-serif;
+font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 18px;
@@ -96,71 +75,46 @@ export const ProductName = styled.h3`
   margin-bottom: 20px;
   color: ${cores.coral};
   white-space: nowrap;
-
-  @media (max-width: 768px) {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-`;
+`
+;
 
 // Preço do produto
 export const ProductPrice = styled.p`
-  font-family: 'Roboto', sans-serif;
+font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin-top: 5px;
-  color: ${cores.coral};
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 10px;
-  }
-`;
+  color: ${cores.coral};`
+  
+;
 
 // Ícone de lixeira
+// Ícone de lixeira
+// Ícone de lixeira
 export const TrashIcon = styled.button`
-  background: none;
-  border: none;
-  color: ${cores.coral};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px; /* Ajuste de largura */
-  height: 24px;
+background: none;
+border: none;
+color: ${cores.coral};
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 24px; /* Ajuste de largura */
+height: 24px;
 
-  img {
-    width: 16px;
-    height: 16px;
-    margin-top: 50px;
-    margin-right: 50px;
+img {
+  width: 16px;
+  height: 16px;
+  margin-top:50px;
+  margin-right:50px;
+}
+`
+;
 
-    @media (max-width: 768px) {
-      width: 14px;
-      height: 14px;
-      margin-top: 30px;
-      margin-right: 30px;
-    }
 
-    @media (max-width: 480px) {
-      width: 12px;
-      height: 12px;
-      margin-top: 20px;
-      margin-right: 20px;
-    }
-  }
-`;
 
 // Total geral do carrinho
 export const TotalAmount = styled.div`
-  display: flex;
+display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
@@ -168,22 +122,13 @@ export const TotalAmount = styled.div`
   font-weight: bold;
   width: 100%;
   margin-top: 20px;
-  color: #fff;
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
+  color: #fff;`
+  
+;
 
 // Botão de finalizar compra
-export const CheckoutButton = styled.button`
-  width: 100%;
+export const CheckoutButton = styled.button
+  `width: 100%;
   max-width: 344px;
   height: 24px;
   margin: auto;
@@ -197,35 +142,16 @@ export const CheckoutButton = styled.button`
   text-align: center;
   font-family: Roboto, sans-serif;
   font-weight: 700;
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 10px;
-    height: 20px;
-  }
-`;
-
-export const ErrorMessage = styled.p`
-  color: #fff;
+;`
+export const ErrorMessage = styled.p
+  `color: #fff;
   font-size: 14px;
   margin: 10px 0;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 10px;
-  }
-`;
-
+  text-align: center;`
+;
 // Contêiner da barra lateral do carrinho
 export const CartSidebarContainer = styled.div`
-  position: fixed;
+position: fixed;
   right: 0;
   top: 0;
   width: 360px;
@@ -236,29 +162,16 @@ export const CartSidebarContainer = styled.div`
   z-index: 1000;
   transition: transform 0.3s ease;
   overflow-y: auto;
-  overflow-x: hidden;
-
-  @media (max-width: 768px) {
-    width: 300px;
-    padding: 24px 6px 6px;
-  }
-
-  @media (max-width: 480px) {
-    width: 100%;
-    padding: 16px 4px 4px;
-  }
-`;
+  overflow-x: hidden;`
+;
 
 export const Overlay = styled.div`
-  position: fixed;
+position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #000000CC;
   z-index: 1;
-  transition: opacity 0.3s ease;
-`;
-
-
-
+  transition: opacity 0.3s ease;`
+;
