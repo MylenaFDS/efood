@@ -51,7 +51,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
                   <ProductPrice>R$ {item.preco.toFixed(2)}</ProductPrice>
                 </ProductInfo>
                 <TrashIcon onClick={() => handleRemoveItem(item.id)}>
-                <img src={lixeira} alt="Remover item" />
+                    <img src={lixeira} alt="Remover item" width="16" height="16" />
                 </TrashIcon>
               </CartItem>
             ))}

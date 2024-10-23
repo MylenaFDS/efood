@@ -23,6 +23,7 @@ export const CartItemsList = styled.ul`
 `;
 
 // Estilo para cada item do carrinho
+// Estilo para cada item do carrinho
 export const CartItem = styled.li`
   display: flex;
   justify-content: space-between;
@@ -38,6 +39,8 @@ export const CartItem = styled.li`
     margin-bottom: 0;
   }
 `;
+
+
 
 // Imagem do produto
 export const ProductImage = styled.img`
@@ -78,17 +81,28 @@ export const ProductPrice = styled.p`
 `;
 
 // Ícone de lixeira
+// Ícone de lixeira
+// Ícone de lixeira
 export const TrashIcon = styled.button`
   background: none;
   border: none;
   color: ${cores.coral};
   cursor: pointer;
-  font-size: 20px; /* Tamanho do ícone */
-
-  &:hover {
-    color: ${cores.coralDark};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* Ajuste de largura */
+  height: 24px;
+  
+  img {
+    width: 16px;
+    height: 16px;
+    margin-top:50px;
+    margin-right:50px;
   }
 `;
+
+
 
 // Total geral do carrinho
 export const TotalAmount = styled.div`
