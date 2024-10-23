@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../store/cartSlice';
 import {
   RestaurantDetailsContainer,
+  RestaurantInfo,
   RestaurantTitle,
   RestaurantTag,
   ProductsContainer,
@@ -79,9 +80,12 @@ const Perfil: React.FC = () => {
     <>
       <Header />
       <RestaurantDetailsContainer backgroundImage={restaurant.capa}>
-        <RestaurantTag>{restaurant.tipo}</RestaurantTag>
-        <RestaurantTitle>{restaurant.titulo}</RestaurantTitle>
+        <RestaurantInfo>
+          <RestaurantTag>{restaurant.tipo}</RestaurantTag>
+          <RestaurantTitle>{restaurant.titulo}</RestaurantTitle>
+        </RestaurantInfo>
       </RestaurantDetailsContainer>
+
 
       {restaurant.cardapio && restaurant.cardapio.length > 0 && (
         <ProductsContainer>

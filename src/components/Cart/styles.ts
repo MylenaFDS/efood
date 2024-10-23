@@ -10,8 +10,6 @@ export const CartContainer = styled.div`
   background: #000000CC;
 `;
 
-
-
 // Mensagem de carrinho vazio
 export const EmptyCartMessage = styled.p`
   text-align: center;
@@ -22,35 +20,32 @@ export const CartItemsList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
- 
 `;
 
 // Estilo para cada item do carrinho
 export const CartItem = styled.li`
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start; /* Alinha os itens no topo */
+  justify-content: space-between;
+  align-items: center;
   padding: 8px;
   border-bottom: 1px solid #ddd;
   width: 344px;
   background: #fff;
-  margin:0px 0px 16px;
+  margin: 0px 0px 16px;
 
   &:last-child {
     border-bottom: none;
-    margin-bottom: 0; /* Remove o espaço do último item */
+    margin-bottom: 0;
   }
 `;
 
-
-
+// Imagem do produto
 export const ProductImage = styled.img`
-
-  width: 80px; /* Defina a largura desejada */
-  height: 80px; /* Defina a altura desejada */
-  
-  
+  width: 80px;
+  height: 80px;
 `;
+
+// Informações do produto
 export const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,53 +53,61 @@ export const ProductInfo = styled.div`
   align-items: flex-start;
   padding: 0;
   margin: 0px 0px 0px 8px;
+  flex-grow: 1;
 `;
-
-
-
 
 // Nome do produto
 export const ProductName = styled.h3`
-font-family: Roboto,sans-serif;
-font-style: normal;
-font-weight: 900;
-font-size: 18px;
-line-height: 21px;
-text-align: left;
-margin-bottom:20px;
-color: ${cores.coral};
-white-space: nowrap;
-
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: left;
+  margin-bottom: 20px;
+  color: ${cores.coral};
+  white-space: nowrap;
 `;
 
 // Preço do produto
 export const ProductPrice = styled.p`
-font-family: 'Roboto',sans-serif;
-font-size: 14px;
-margin-top: 5px; /* Espaçamento entre nome e preço */
-color: ${cores.coral};
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+  color: ${cores.coral};
+`;
+
+// Ícone de lixeira
+export const TrashIcon = styled.button`
+  background: none;
+  border: none;
+  color: ${cores.coral};
+  cursor: pointer;
+  font-size: 20px; /* Tamanho do ícone */
+
+  &:hover {
+    color: ${cores.coralDark};
+  }
 `;
 
 // Total geral do carrinho
 export const TotalAmount = styled.div`
   display: flex;
-  justify-content: space-between; /* Distribui os itens entre os lados */
+  justify-content: space-between;
   align-items: center;
   padding: 15px 0;
   font-size: 14px;
   font-weight: bold;
   width: 100%;
- 
-  margin-top: 20px; /* Espaço acima do total */
+  margin-top: 20px;
   color: #fff;
 `;
-
 
 // Botão de finalizar compra
 export const CheckoutButton = styled.button`
   width: 100%;
   max-width: 344px;
-  height:24px;
+  height: 24px;
   margin: auto;
   padding: 0;
   background-color: #fff;
@@ -114,35 +117,25 @@ export const CheckoutButton = styled.button`
   cursor: pointer;
   display: block;
   text-align: center;
-font-family: Roboto,sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 16px;
-
-
-
-
-
-
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
 `;
 
+// Contêiner da barra lateral do carrinho
 export const CartSidebarContainer = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  width: 360px; // Defina a largura que preferir
+  width: 360px;
   height: 100%;
-  background-color: white; // Cor de fundo
+  background-color: ${cores.coral};
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   padding: 32px 8px 8px;
-  z-index: 1000; // Certifique-se de que a barra lateral fique acima de outros componentes
+  z-index: 1000;
   transition: transform 0.3s ease;
-  background-color: ${cores.coral};
-  overflow-y: auto; /* O scroll só aparece quando necessário */
+  overflow-y: auto;
   overflow-x: hidden;
 `;
-
 
 export const Overlay = styled.div`
   position: fixed;
@@ -150,9 +143,10 @@ export const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000000CC; /* Cor escura com opacidade */
-  z-index: 1; /* Deve estar abaixo do carrinho, mas acima de outros conteúdos */
-  transition: opacity 0.3s ease; /* Efeito de transição se necessário */
+  background-color: #000000CC;
+  z-index: 1;
+  transition: opacity 0.3s ease;
 `;
+
 
 

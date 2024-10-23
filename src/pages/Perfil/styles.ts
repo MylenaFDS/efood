@@ -77,16 +77,29 @@ export const RestaurantImage = styled.img`
   }
 `;
 
-export const RestaurantTag = styled.h4`
-  position: absolute;
-  top: 10px;
-  left: 170px;
-  font-size: 32px;
-  margin-left: 20px;
-  color: #FFFFFF;
-  opacity: 0.6;
 
-  z-index: 1; 
+export const RestaurantInfo = styled.div`
+color: rgb(230, 103, 103);
+padding: 0px;
+box-sizing: border-box;
+font-family: Roboto, sans-serif;
+width: 1024px;
+height: 100%;
+margin: 0px auto;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+`;
+
+export const RestaurantTag = styled.h4`
+  
+  top: 0;
+  left: 20px;
+  font-size: 32px;
+  color: #FFFFFF;
+
+  font-weight: 100;
+  z-index: 2; 
 
   /* Media Queries */
   @media (max-width: 1024px) {
@@ -106,32 +119,27 @@ export const RestaurantTag = styled.h4`
 `;
 
 export const RestaurantTitle = styled.h2`
-  margin-top: 200px;
   font-size: 2rem;
   font-weight: 900;
-  margin-bottom: 10px;
+  margin-top: 20px; /* Ajuste conforme necessário */
   line-height: 37.5px;
-  margin-left: 170px;
   color: #FFFFFF;
-  position: absolute;
-  z-index: 2; 
+  z-index: 2;
 
   /* Media Queries */
   @media (max-width: 1024px) {
     font-size: 1.8rem;
-    margin-left: 15px;
   }
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
-    margin-left: 10px;
   }
 
   @media (max-width: 480px) {
     font-size: 1.2rem;
-    margin-left: 5px;
   }
 `;
+
 
 export const ProductsContainer = styled.div`
   display: grid;
