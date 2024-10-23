@@ -8,6 +8,14 @@ export const CartContainer = styled.div`
   margin: 0 auto;
   padding: 20px;
   background: #000000CC;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 // Mensagem de carrinho vazio
@@ -23,7 +31,6 @@ export const CartItemsList = styled.ul`
 `;
 
 // Estilo para cada item do carrinho
-// Estilo para cada item do carrinho
 export const CartItem = styled.li`
   display: flex;
   justify-content: space-between;
@@ -38,14 +45,33 @@ export const CartItem = styled.li`
     border-bottom: none;
     margin-bottom: 0;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+  }
 `;
-
-
 
 // Imagem do produto
 export const ProductImage = styled.img`
   width: 80px;
   height: 80px;
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 // Informações do produto
@@ -70,6 +96,16 @@ export const ProductName = styled.h3`
   margin-bottom: 20px;
   color: ${cores.coral};
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
 `;
 
 // Preço do produto
@@ -78,10 +114,16 @@ export const ProductPrice = styled.p`
   font-size: 14px;
   margin-top: 5px;
   color: ${cores.coral};
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
 `;
 
-// Ícone de lixeira
-// Ícone de lixeira
 // Ícone de lixeira
 export const TrashIcon = styled.button`
   background: none;
@@ -93,16 +135,28 @@ export const TrashIcon = styled.button`
   justify-content: center;
   width: 24px; /* Ajuste de largura */
   height: 24px;
-  
+
   img {
     width: 16px;
     height: 16px;
-    margin-top:50px;
-    margin-right:50px;
+    margin-top: 50px;
+    margin-right: 50px;
+
+    @media (max-width: 768px) {
+      width: 14px;
+      height: 14px;
+      margin-top: 30px;
+      margin-right: 30px;
+    }
+
+    @media (max-width: 480px) {
+      width: 12px;
+      height: 12px;
+      margin-top: 20px;
+      margin-right: 20px;
+    }
   }
 `;
-
-
 
 // Total geral do carrinho
 export const TotalAmount = styled.div`
@@ -115,6 +169,16 @@ export const TotalAmount = styled.div`
   width: 100%;
   margin-top: 20px;
   color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 // Botão de finalizar compra
@@ -133,13 +197,32 @@ export const CheckoutButton = styled.button`
   text-align: center;
   font-family: Roboto, sans-serif;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+    height: 20px;
+  }
 `;
+
 export const ErrorMessage = styled.p`
   color: #fff;
   font-size: 14px;
   margin: 10px 0;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
 `;
+
 // Contêiner da barra lateral do carrinho
 export const CartSidebarContainer = styled.div`
   position: fixed;
@@ -154,6 +237,16 @@ export const CartSidebarContainer = styled.div`
   transition: transform 0.3s ease;
   overflow-y: auto;
   overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    padding: 24px 6px 6px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 16px 4px 4px;
+  }
 `;
 
 export const Overlay = styled.div`
