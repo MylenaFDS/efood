@@ -134,7 +134,12 @@ export const CheckoutButton = styled.button`
   font-family: Roboto, sans-serif;
   font-weight: 700;
 `;
-
+export const ErrorMessage = styled.p`
+  color: #fff;
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
+`;
 // Contêiner da barra lateral do carrinho
 export const CartSidebarContainer = styled.div`
   position: fixed;

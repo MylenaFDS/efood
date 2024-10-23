@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
-import { removeItemFromCart } from '../../store/cartSlice'; 
+import { removeItemFromCart, clearErrorMessage } from '../../store/cartSlice'; 
 import lixeira from '../../assets/images/lixeira.png';
 import {
   CartSidebarContainer,
@@ -15,6 +15,7 @@ import {
   TrashIcon,
   TotalAmount,
   CheckoutButton,
+  ErrorMessage, // Importa o componente de estilo para mensagem de erro
 } from './styles';
 
 interface CartProps {
@@ -25,6 +26,17 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const totalAmount = useSelector((state: RootState) => state.cart.totalAmount);
+  const errorMessage = useSelector((state: RootState) => state.cart.errorMessage);
+
+  useEffect(() => {
+    // Limpa a mensagem de erro após 3 segundos
+    if (errorMessage) {
+      const timer = setTimeout(() => {
+        dispatch(clearErrorMessage());
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [errorMessage, dispatch]);
 
   const handleRemoveItem = (itemId: number) => {
     dispatch(removeItemFromCart(itemId));
@@ -32,6 +44,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 
   return (
     <CartSidebarContainer>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       {cartItems.length === 0 ? (
         <EmptyCartMessage>
           <TotalAmount>
@@ -51,7 +64,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
                   <ProductPrice>R$ {item.preco.toFixed(2)}</ProductPrice>
                 </ProductInfo>
                 <TrashIcon onClick={() => handleRemoveItem(item.id)}>
-                    <img src={lixeira} alt="Remover item" width="16" height="16" />
+                  <img src={lixeira} alt="Remover item" width="16" height="16" />
                 </TrashIcon>
               </CartItem>
             ))}
@@ -68,4 +81,5 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 };
 
 export default Cart;
+
 
