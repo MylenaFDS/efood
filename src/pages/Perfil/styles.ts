@@ -79,27 +79,39 @@ export const RestaurantImage = styled.img`
 
 
 export const RestaurantInfo = styled.div`
-color: rgb(230, 103, 103);
-padding: 0px;
-box-sizing: border-box;
-font-family: Roboto, sans-serif;
-width: 1024px;
-height: 100%;
-margin: 0px auto;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  color: rgb(230, 103, 103);
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    width: 90%; /* Ajusta a largura para telas menores */
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* A largura se ajusta para ocupar 100% em telas pequenas */
+    padding: 10px; /* Adiciona um padding se necessário */
+  }
+
+  @media (max-width: 480px) {
+    padding: 5px; /* Reduz o padding em telas menores */
+  }
 `;
 
 export const RestaurantTag = styled.h4`
-  
   top: 0;
   left: 20px;
   font-size: 32px;
   color: #FFFFFF;
-
   font-weight: 100;
-  z-index: 2; 
+  z-index: 2;
 
   /* Media Queries */
   @media (max-width: 1024px) {
