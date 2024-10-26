@@ -3,7 +3,7 @@ import { DeliveryContainer, Label, Input, RowContainer, SubmitButton, BackButton
 
 interface DeliveryPageProps {
   onSubmit: (deliveryData: { name: string; address: string; city: string; cep: string; phone: string; complement: string }) => void;
-  onBackToCart: () => void; // Nova prop para voltar ao carrinho
+  onBackToCart: () => void;
 }
 
 const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit, onBackToCart }) => {
@@ -13,13 +13,37 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit, onBackToCart }) =
   const [cep, setCep] = useState('');
   const [phone, setPhone] = useState('');
   const [complement, setComplement] = useState('');
+  const [cepValid, setCepValid] = useState(true);
+  const [phoneValid, setPhoneValid] = useState(true);
+
+  // Máscara de CEP para o formato 00000-000
+  const handleCepChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, ''); // Remove qualquer caractere não numérico
+    if (value.length > 5) {
+      value = value.slice(0, 5) + '-' + value.slice(5, 8);
+    }
+    setCep(value);
+    setCepValid(value.length === 9); // Verifica se o comprimento é 9 (incluindo o "-")
+  };
+
+  // Máscara de telefone para o formato (00) 00000-0000
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, ''); // Remove qualquer caractere não numérico
+    if (value.length > 2) {
+      value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
+    }
+    setPhone(value);
+    setPhoneValid(value.length === 15); // Verifica se o comprimento é 15 (incluindo parênteses e o "-")
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ name, address, city, cep, phone, complement });
+
+    if (cepValid && phoneValid) {
+      onSubmit({ name, address, city, cep, phone, complement });
+    }
   };
 
-  
   return (
     <DeliveryContainer>
       <h2>Entrega</h2>
@@ -62,8 +86,9 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit, onBackToCart }) =
               type="text"
               placeholder="00000-000"
               value={cep}
-              onChange={(e) => setCep(e.target.value)}
+              onChange={handleCepChange}
               required
+              style={{ borderColor: cepValid ? '' : 'red' }} // Estilo condicional para borda
             />
           </div>
           <div>
@@ -71,10 +96,11 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit, onBackToCart }) =
             <Input
               id="phone"
               type="text"
-              placeholder="(XX) XXXXX-XXXX"
+              placeholder="(00) 00000-0000"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={handlePhoneChange}
               required
+              style={{ borderColor: phoneValid ? '' : 'red' }} // Estilo condicional para borda
             />
           </div>
         </RowContainer>
@@ -91,12 +117,13 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit, onBackToCart }) =
         <SubmitButton type="submit">Continuar com o pagamento</SubmitButton>
       </form>
       <BackButton type="button" onClick={onBackToCart}>Voltar para o Carrinho</BackButton>
-    
     </DeliveryContainer>
   );
 };
 
 export default DeliveryPage;
+
+
 
 
 
