@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { DeliveryContainer, Label, Input, RowContainer, SubmitButton } from './styles';
+import { DeliveryContainer, Label, Input, RowContainer, SubmitButton, BackButton } from './styles';
 
 interface DeliveryPageProps {
   onSubmit: (deliveryData: { name: string; address: string; city: string; cep: string; phone: string; complement: string }) => void;
+  onBackToCart: () => void; // Nova prop para voltar ao carrinho
 }
 
-const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit }) => {
+const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit, onBackToCart }) => {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
@@ -18,6 +19,7 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit }) => {
     onSubmit({ name, address, city, cep, phone, complement });
   };
 
+  
   return (
     <DeliveryContainer>
       <h2>Entrega</h2>
@@ -55,7 +57,7 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit }) => {
         <RowContainer>
           <div>
             <Label htmlFor="cep">CEP</Label>
-            <input
+            <Input
               id="cep"
               type="text"
               placeholder="00000-000"
@@ -66,7 +68,7 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit }) => {
           </div>
           <div>
             <Label htmlFor="phone">Telefone</Label>
-            <input
+            <Input
               id="phone"
               type="text"
               placeholder="(XX) XXXXX-XXXX"
@@ -88,10 +90,13 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit }) => {
 
         <SubmitButton type="submit">Continuar com o pagamento</SubmitButton>
       </form>
+      <BackButton type="button" onClick={onBackToCart}>Voltar para o Carrinho</BackButton>
+    
     </DeliveryContainer>
   );
 };
 
 export default DeliveryPage;
+
 
 

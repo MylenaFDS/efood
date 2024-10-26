@@ -1,3 +1,4 @@
+// Cart.tsx
 import React, { useState } from 'react';
 import DeliveryPage from '../DeliveryPage';
 import { useSelector, useDispatch } from 'react-redux';
@@ -16,7 +17,7 @@ import {
   TrashIcon,
   TotalAmount,
   CheckoutButton,
-  ErrorMessage, // Importa o componente de estilo para mensagem de erro
+  ErrorMessage, 
 } from './styles';
 
 interface CartProps {
@@ -38,7 +39,11 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
     setIsDeliveryPage(true);
   };
 
-  const handleDeliverySubmit = (deliveryData: { name: string; address: string; phone: string }) => {
+  const handleBackToCart = () => {
+    setIsDeliveryPage(false); // Volta para o carrinho
+  };
+
+  const handleDeliverySubmit = (deliveryData: { name: string; address: string; city: string; cep: string; phone: string; complement: string }) => {
     fetch('https://fake-api-tau.vercel.app/api/efood/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -51,14 +56,10 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
         return response.json();
       })
       .then((data) => {
-        // Exibir a tela de confirmação com os dados recebidos da API
         console.log('Pedido confirmado:', data);
-        // Você pode definir um estado para exibir a tela de confirmação com `data` retornado
-        // Exemplo: setOrderConfirmed(true) e armazenar `data` no estado.
       })
       .catch((error) => {
         console.error('Erro ao concluir pedido:', error);
-        // Exibir mensagem de erro ou lógica adicional para lidar com o erro
       });
   };
   
@@ -66,7 +67,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   return (
     <CartSidebarContainer>
       {isDeliveryPage ? (
-        <DeliveryPage onSubmit={handleDeliverySubmit} />
+        <DeliveryPage onSubmit={handleDeliverySubmit} onBackToCart={handleBackToCart} />
       ) : (
         <>
           {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
@@ -108,5 +109,3 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 };
 
 export default Cart;
-
-

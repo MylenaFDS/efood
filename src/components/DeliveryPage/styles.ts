@@ -59,3 +59,14 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   font-weight: bold;
 `;
+
+export const BackButton = styled.button`
+  width: 344px;
+  padding: 10px;
+  margin-top: 12px;
+  background-color: #fff;
+  color: ${cores.coral};
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+`;
