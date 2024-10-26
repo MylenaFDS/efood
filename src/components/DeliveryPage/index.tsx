@@ -115,9 +115,11 @@ const DeliveryPage: React.FC<DeliveryPageProps> = ({ onSubmit, onBackToCart }) =
         />
 
         <SubmitButton type="submit">Continuar com o pagamento</SubmitButton>
-      </form>
-      <BackButton type="button" onClick={onBackToCart}>Voltar para o Carrinho</BackButton>
+        <BackButton type="button" onClick={onBackToCart}>Voltar para o Carrinho</BackButton>
+        </form>
     </DeliveryContainer>
+      
+      
   );
 };
 
