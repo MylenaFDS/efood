@@ -1,6 +1,6 @@
-// Cart.tsx
 import React, { useState } from 'react';
 import DeliveryPage from '../DeliveryPage';
+import PaymentPage from '../PaymentPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
 import { removeItemFromCart, clearErrorMessage } from '../../store/cartSlice'; 
@@ -30,6 +30,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   const totalAmount = useSelector((state: RootState) => state.cart.totalAmount);
   const errorMessage = useSelector((state: RootState) => state.cart.errorMessage);
   const [isDeliveryPage, setIsDeliveryPage] = useState(false);
+  const [isPaymentPage, setIsPaymentPage] = useState(false);
 
   const handleRemoveItem = (itemId: number) => {
     dispatch(removeItemFromCart(itemId));
@@ -40,33 +41,41 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   };
 
   const handleBackToCart = () => {
-    setIsDeliveryPage(false); // Volta para o carrinho
+    setIsDeliveryPage(false);
+    setIsPaymentPage(false);
   };
 
   const handleDeliverySubmit = (deliveryData: { name: string; address: string; city: string; cep: string; phone: string; complement: string }) => {
+    setIsPaymentPage(true); // Vai para a página de pagamento
+  };
+
+  const handleConfirmPayment = (paymentData: { cardNumber: string; cardName: string; expiryDateMonth: string; expiryDateYear: string; cvv: string }) => {
+    // Realiza a requisição POST com os dados de pagamento
     fetch('https://fake-api-tau.vercel.app/api/efood/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ deliveryData, cartItems, totalAmount }),
+      body: JSON.stringify({ paymentData, cartItems, totalAmount }),
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Erro ao concluir o pedido. Tente novamente.');
+          throw new Error('Erro ao confirmar o pagamento. Tente novamente.');
         }
         return response.json();
       })
       .then((data) => {
-        console.log('Pedido confirmado:', data);
+        console.log('Pagamento confirmado:', data);
       })
       .catch((error) => {
-        console.error('Erro ao concluir pedido:', error);
+        console.error('Erro ao confirmar pagamento:', error);
       });
   };
   
 
   return (
     <CartSidebarContainer>
-      {isDeliveryPage ? (
+      {isPaymentPage ? (
+        <PaymentPage onConfirmPayment={handleConfirmPayment} onBackToDelivery={() => setIsPaymentPage(false)} totalAmount={totalAmount} />
+      ) : isDeliveryPage ? (
         <DeliveryPage onSubmit={handleDeliverySubmit} onBackToCart={handleBackToCart} />
       ) : (
         <>
@@ -109,3 +118,4 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 };
 
 export default Cart;
+
