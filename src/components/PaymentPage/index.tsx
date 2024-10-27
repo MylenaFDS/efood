@@ -1,6 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { PaymentContainer, Label, Input, RowContainer, SubmitButton, BackButton } from './styles';
-import OrderConfirmation from '../OrderConfirmation';
+import { PaymentContainer, Label, Input, RowContainer, SubmitButton, BackButton, ConfirmationContainer, Message, CloseButton } from './styles';
+
+interface OrderConfirmationProps {
+  orderId: string; // Adicionando a propriedade orderId
+  onClose: () => void; // Função para fechar a confirmação
+}
+
+const OrderConfirmation: React.FC<OrderConfirmationProps> = ({ orderId, onClose }) => {
+  return (
+    <ConfirmationContainer>
+      <h2>Pedido realizado - <strong>#{orderId}</strong></h2>
+      <Message>
+        Estamos felizes em informar que seu pedido já está em processo de preparação e, em breve, será entregue no endereço fornecido.
+        <br />
+        <br />
+        Gostaríamos de ressaltar que nossos entregadores não estão autorizados a realizar cobranças extras. 
+        <br />
+        <br />
+        Lembre-se da importância de higienizar as mãos após o recebimento do pedido, garantindo assim sua segurança e bem-estar durante a refeição.
+        <br />
+        <br />
+        Esperamos que desfrute de uma deliciosa e agradável experiência gastronômica. Bom apetite!
+      </Message>
+      <CloseButton type="button" onClick={onClose}>Concluir</CloseButton>
+    </ConfirmationContainer>
+  );
+};
 
 interface PaymentPageProps {
   onConfirmPayment: (paymentData: {
@@ -34,9 +59,9 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
   const [paymentData, setPaymentData] = useState(initialPaymentState);
   const [errorMessage, setErrorMessage] = useState('');
   const [orderConfirmed, setOrderConfirmed] = useState(false);
-  const [orderId, setOrderId] = useState<string | null>(null); // Novo estado para armazenar o ID do pedido
+  const [orderId, setOrderId] = useState<string | null>(null); // Estado para armazenar o ID do pedido
 
-  // Clear error message after 3 seconds
+  // Limpa a mensagem de erro após 3 segundos
   useEffect(() => {
     if (errorMessage) {
       const timer = setTimeout(() => setErrorMessage(''), 3000);
@@ -54,25 +79,32 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
 
     const { cardNumber, cvv } = paymentData;
 
+    // Validações simples
     if (!/^\d{16}$/.test(cardNumber)) {
       setErrorMessage('O número do cartão deve ter 16 dígitos.');
       return;
     }
 
     if (!/^\d{3,4}$/.test(cvv)) {
-      setErrorMessage('O CVV deve ter 3 ou 4 dígitos.');
+      setErrorMessage('O CVV deve ter 3 dígitos.');
       return;
     }
 
+    // Limpa a mensagem de erro
     setErrorMessage('');
+
+    // Chama a função de confirmação de pagamento
     onConfirmPayment(paymentData);
-    setOrderId(generateRandomOrderId()); // Define um novo ID ao confirmar o pagamento
+
+    // Gera um novo ID de pedido e marca como confirmado
+    setOrderId(generateRandomOrderId());
     setOrderConfirmed(true);
   };
 
-  const handleCloseConfirmation = () => {
-    setOrderConfirmed(false); // Fecha o carrinho ao concluir
-    setOrderId(null); // Reseta o ID do pedido
+  const handleCompleteOrder = () => {
+    setOrderConfirmed(false); // Reseta o estado de confirmação
+    setOrderId(null); // Limpa o ID do pedido
+    setPaymentData(initialPaymentState); // Reseta os dados do pagamento
   };
 
   return (
@@ -165,7 +197,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
         orderId && (
           <OrderConfirmation
             orderId={orderId} // Usando o ID gerado
-            onClose={handleCloseConfirmation} // Função para fechar a confirmação
+            onClose={handleCompleteOrder} // Função para fechar a confirmação
           />
         )
       )}
@@ -174,4 +206,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
 };
 
 export default PaymentPage;
+
+
+
 

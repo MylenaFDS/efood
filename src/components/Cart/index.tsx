@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import DeliveryPage from '../DeliveryPage';
 import PaymentPage from '../PaymentPage';
-import OrderConfirmation from '../OrderConfirmation'; // Importe o novo componente
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
-import { removeItemFromCart, clearErrorMessage } from '../../store/cartSlice';
+import { removeItemFromCart } from '../../store/cartSlice'; 
 import lixeira from '../../assets/images/lixeira.png';
 import {
   CartSidebarContainer,
@@ -18,7 +17,7 @@ import {
   TrashIcon,
   TotalAmount,
   CheckoutButton,
-  ErrorMessage,
+  ErrorMessage, 
 } from './styles';
 
 interface CartProps {
@@ -30,29 +29,32 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const totalAmount = useSelector((state: RootState) => state.cart.totalAmount);
   const errorMessage = useSelector((state: RootState) => state.cart.errorMessage);
-  
   const [isDeliveryPage, setIsDeliveryPage] = useState(false);
   const [isPaymentPage, setIsPaymentPage] = useState(false);
-  const [orderId, setOrderId] = useState<string | null>(null); // Estado para armazenar o ID do pedido
+  const [orderId, setOrderId] = useState<string | null>(null);
 
   const handleRemoveItem = (itemId: number) => {
     dispatch(removeItemFromCart(itemId));
   };
 
   const handleContinueToDelivery = () => {
+    console.log('Navegando para a página de entrega...');
     setIsDeliveryPage(true);
   };
 
   const handleBackToCart = () => {
+    console.log('Voltando para o carrinho...');
     setIsDeliveryPage(false);
     setIsPaymentPage(false);
   };
 
   const handleDeliverySubmit = (deliveryData: { name: string; address: string; city: string; cep: string; phone: string; complement: string }) => {
+    console.log('Dados de entrega enviados:', deliveryData);
     setIsPaymentPage(true);
   };
 
   const handleConfirmPayment = (paymentData: { cardNumber: string; cardName: string; expiryDateMonth: string; expiryDateYear: string; cvv: string }) => {
+    console.log('Confirmando pagamento...', paymentData);
     fetch('https://fake-api-tau.vercel.app/api/efood/checkout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -65,7 +67,8 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
         return response.json();
       })
       .then((data) => {
-        setOrderId(data.orderId); // Armazene o ID do pedido retornado pela API
+        console.log('Pagamento confirmado:', data);
+        setOrderId(data.orderId); // Supondo que o id do pedido venha na resposta
       })
       .catch((error) => {
         console.error('Erro ao confirmar pagamento:', error);
@@ -73,19 +76,32 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   };
 
   const handleCloseConfirmation = () => {
-    setOrderId(null); // Reinicia o estado ao fechar a confirmação
-    onClose(); // Chama a função para fechar o carrinho
+    console.log('Fechando a confirmação...');
+    setOrderId(null); // Resetar orderId quando o usuário fechar a confirmação
+    setIsDeliveryPage(false); // Resetar para não ficar na página de entrega
+    setIsPaymentPage(false); // Resetar para não ficar na página de pagamento
   };
 
   return (
     <CartSidebarContainer>
       {orderId ? (
-  <OrderConfirmation orderId={orderId} onClose={handleCloseConfirmation} />
-) : isPaymentPage ? (
-  <PaymentPage onConfirmPayment={handleConfirmPayment} onBackToDelivery={() => setIsPaymentPage(false)} totalAmount={totalAmount} />
-) : isDeliveryPage ? (
-  <DeliveryPage onSubmit={handleDeliverySubmit} onBackToCart={handleBackToCart} />
-) : (
+        <>
+          <h2>Pedido Confirmado</h2>
+          <p>Seu pedido foi confirmado com o ID: {orderId}</p>
+          <button onClick={handleCloseConfirmation}>Fechar</button>
+        </>
+      ) : isPaymentPage ? (
+        <PaymentPage 
+          onConfirmPayment={handleConfirmPayment} 
+          onBackToDelivery={() => setIsPaymentPage(false)} 
+          totalAmount={totalAmount} 
+        />
+      ) : isDeliveryPage ? (
+        <DeliveryPage 
+          onSubmit={handleDeliverySubmit} 
+          onBackToCart={handleBackToCart} 
+        />
+      ) : (
         <>
           {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
           {cartItems.length === 0 ? (
@@ -126,5 +142,3 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 };
 
 export default Cart;
-
-
