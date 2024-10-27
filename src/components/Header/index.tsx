@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { HeaderContainer, HeaderContent, Fundo, Logo, LinkRestaurants, TextCart, OverlayCart } from "./styles"; // Importar o Overlay
 import logo from '../../assets/images/logo.svg';
@@ -10,6 +10,11 @@ import Cart from "../Cart";
 const Header: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.items);
+
+  // Verificação do cartItems para depuração
+  useEffect(() => {
+    console.log("Itens do carrinho:", cartItems);
+  }, [cartItems]);
 
   const toggleCart = () => {
     setIsCartOpen(prevState => !prevState);

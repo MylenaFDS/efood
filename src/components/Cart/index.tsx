@@ -3,7 +3,7 @@ import DeliveryPage from '../DeliveryPage';
 import PaymentPage from '../PaymentPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
-import { removeItemFromCart } from '../../store/cartSlice'; 
+import { addItemToCart, removeItemFromCart, removeAllItemsFromCart } from '../../store/cartSlice'; // Importando a ação
 import lixeira from '../../assets/images/lixeira.png';
 import {
   CartSidebarContainer,
@@ -17,8 +17,16 @@ import {
   TrashIcon,
   TotalAmount,
   CheckoutButton,
-  ErrorMessage, 
+  ErrorMessage,
 } from './styles';
+
+// Definindo a interface para o item do carrinho
+interface CartItem {
+  id: number;
+  nome: string;
+  preco: number;
+  foto: string;
+}
 
 interface CartProps {
   onClose: () => void;
@@ -32,9 +40,26 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
   const [isDeliveryPage, setIsDeliveryPage] = useState(false);
   const [isPaymentPage, setIsPaymentPage] = useState(false);
   const [orderId, setOrderId] = useState<string | null>(null);
+  const [duplicateItemMessage, setDuplicateItemMessage] = useState('');
 
   const handleRemoveItem = (itemId: number) => {
     dispatch(removeItemFromCart(itemId));
+  };
+
+  const handleRemoveAllItems = () => {
+    dispatch(removeAllItemsFromCart());
+  };
+
+  const handleAddItem = (item: CartItem) => { // Definindo o tipo do parâmetro 'item'
+    const itemExists = cartItems.find(cartItem => cartItem.id === item.id);
+    
+    if (itemExists) {
+      setDuplicateItemMessage("Pedido já adicionado ao carrinho");
+      return;
+    }
+
+    dispatch(addItemToCart(item));
+    setDuplicateItemMessage('');
   };
 
   const handleContinueToDelivery = () => {
@@ -48,12 +73,14 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
     setIsPaymentPage(false);
   };
 
-  const handleDeliverySubmit = (deliveryData: { name: string; address: string; city: string; cep: string; phone: string; complement: string }) => {
+  // Defina o tipo apropriado para deliveryData
+  const handleDeliverySubmit = (deliveryData: any) => {
     console.log('Dados de entrega enviados:', deliveryData);
     setIsPaymentPage(true);
   };
 
-  const handleConfirmPayment = (paymentData: { cardNumber: string; cardName: string; expiryDateMonth: string; expiryDateYear: string; cvv: string }) => {
+  // Defina o tipo apropriado para paymentData
+  const handleConfirmPayment = (paymentData: any) => {
     console.log('Confirmando pagamento...', paymentData);
     fetch('https://fake-api-tau.vercel.app/api/efood/checkout', {
       method: 'POST',
@@ -68,19 +95,18 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
       })
       .then((data) => {
         console.log('Pagamento confirmado:', data);
-        setOrderId(data.orderId); // Supondo que o id do pedido venha na resposta
+        setOrderId(data.orderId);
       })
       .catch((error) => {
         console.error('Erro ao confirmar pagamento:', error);
-        // Aqui você pode definir um errorMessage usando Redux ou um estado local
       });
   };
 
   const handleCloseConfirmation = () => {
     console.log('Fechando a confirmação...');
-    setOrderId(null); // Resetar orderId quando o usuário fechar a confirmação
-    setIsDeliveryPage(false); // Resetar para não ficar na página de entrega
-    setIsPaymentPage(false); // Resetar para não ficar na página de pagamento
+    setOrderId(null);
+    setIsDeliveryPage(false);
+    setIsPaymentPage(false);
   };
 
   return (
@@ -96,7 +122,8 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
           onConfirmPayment={handleConfirmPayment} 
           onBackToDelivery={() => setIsPaymentPage(false)} 
           totalAmount={totalAmount} 
-          onClose={onClose} // Adiciona esta linha
+          onClose={onClose} 
+          handleRemoveAllItems={handleRemoveAllItems}
         />
       ) : isDeliveryPage ? (
         <DeliveryPage 
@@ -105,14 +132,11 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
         />
       ) : (
         <>
+          {duplicateItemMessage && <ErrorMessage>{duplicateItemMessage}</ErrorMessage>}
           {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
           {cartItems.length === 0 ? (
             <EmptyCartMessage>
-              <TotalAmount>
-                <span>Valor total:</span>
-                <span>R$ {totalAmount.toFixed(2)}</span>
-              </TotalAmount>
-              <CheckoutButton onClick={handleContinueToDelivery}>Continuar com a entrega</CheckoutButton>
+              <p>Seu carrinho está vazio.</p>
             </EmptyCartMessage>
           ) : (
             <>
@@ -144,4 +168,3 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 };
 
 export default Cart;
-

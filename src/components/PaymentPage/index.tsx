@@ -1,20 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { PaymentContainer, Label, Input, RowContainer, SubmitButton, BackButton, ConfirmationContainer, Message, CloseButton } from './styles';
+import { useDispatch } from 'react-redux';
+import {
+  PaymentContainer,
+  Label,
+  Input,
+  RowContainer,
+  SubmitButton,
+  BackButton,
+  ConfirmationContainer,
+  Message,
+  CloseButton,
+} from './styles';
 
 interface OrderConfirmationProps {
-  orderId: string; // Adicionando a propriedade orderId
-  onClose: () => void; // Função para fechar a confirmação
+  orderId: string;
+  onClose: () => void;
+  handleRemoveAllItems: () => void; // Adicionando a propriedade handleRemoveAllItems
 }
 
-const OrderConfirmation: React.FC<OrderConfirmationProps> = ({ orderId, onClose }) => {
+const OrderConfirmation: React.FC<OrderConfirmationProps> = ({ orderId, onClose, handleRemoveAllItems }) => {
   return (
     <ConfirmationContainer>
-      <h2>Pedido realizado - <strong>#{orderId}</strong></h2>
+      <h2>
+        Pedido realizado - <strong>#{orderId}</strong>
+      </h2>
       <Message>
         Estamos felizes em informar que seu pedido já está em processo de preparação e, em breve, será entregue no endereço fornecido.
         <br />
         <br />
-        Gostaríamos de ressaltar que nossos entregadores não estão autorizados a realizar cobranças extras. 
+        Gostaríamos de ressaltar que nossos entregadores não estão autorizados a realizar cobranças extras.
         <br />
         <br />
         Lembre-se da importância de higienizar as mãos após o recebimento do pedido, garantindo assim sua segurança e bem-estar durante a refeição.
@@ -22,7 +36,15 @@ const OrderConfirmation: React.FC<OrderConfirmationProps> = ({ orderId, onClose 
         <br />
         Esperamos que desfrute de uma deliciosa e agradável experiência gastronômica. Bom apetite!
       </Message>
-      <CloseButton type="button" onClick={onClose}>Concluir</CloseButton>
+      <CloseButton
+        type="button"
+        onClick={() => {
+          handleRemoveAllItems(); // Chamando a função para remover todos os itens
+          onClose(); // Chamando a função de fechamento
+        }}
+      >
+        Concluir
+      </CloseButton>
     </ConfirmationContainer>
   );
 };
@@ -38,6 +60,7 @@ interface PaymentPageProps {
   onBackToDelivery: () => void;
   totalAmount: number;
   onClose: () => void; // Certifique-se de que a propriedade onClose está aqui
+  handleRemoveAllItems: () => void; // Adicionando a propriedade handleRemoveAllItems
 }
 
 const initialPaymentState = {
@@ -56,12 +79,15 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
   onConfirmPayment,
   onBackToDelivery,
   totalAmount,
-  onClose, // Certifique-se de que onClose é desestruturado aqui
+  onClose,
+  handleRemoveAllItems, // Recebendo a função
 }) => {
   const [paymentData, setPaymentData] = useState(initialPaymentState);
   const [errorMessage, setErrorMessage] = useState('');
   const [orderConfirmed, setOrderConfirmed] = useState(false);
-  const [orderId, setOrderId] = useState<string | null>(null); // Estado para armazenar o ID do pedido
+  const [orderId, setOrderId] = useState<string>('');
+
+  const dispatch = useDispatch();
 
   // Limpa a mensagem de erro após 3 segundos
   useEffect(() => {
@@ -71,43 +97,32 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
     }
   }, [errorMessage]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setPaymentData((prevState) => ({ ...prevState, [id]: value }));
-  };
+  // Função para lidar com a submissão do pagamento
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const { cardNumber, cvv } = paymentData;
-
-    // Validações simples
-    if (!/^\d{16}$/.test(cardNumber)) {
-      setErrorMessage('O número do cartão deve ter 16 dígitos.');
+    if (Object.values(paymentData).some((value) => value.trim() === '')) {
+      setErrorMessage('Por favor, preencha todos os campos.');
       return;
     }
 
-    if (!/^\d{3,4}$/.test(cvv)) {
-      setErrorMessage('O CVV deve ter 3 dígitos.');
-      return;
-    }
-
-    // Limpa a mensagem de erro
-    setErrorMessage('');
-
-    // Chama a função de confirmação de pagamento
+    // Aqui você pode chamar a função de confirmação do pagamento e gerar o ID do pedido
     onConfirmPayment(paymentData);
-
-    // Gera um novo ID de pedido e marca como confirmado
-    setOrderId(generateRandomOrderId());
-    setOrderConfirmed(true);
+    setOrderId(generateRandomOrderId()); // Gera um novo ID de pedido
+    setOrderConfirmed(true); // Marca o pedido como confirmado
   };
 
+  // Função para lidar com mudanças nos inputs
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = event.target;
+    setPaymentData((prevData) => ({ ...prevData, [id]: value }));
+  };
+
+  // Função para lidar com o fechamento da confirmação do pedido
   const handleCompleteOrder = () => {
-    setOrderConfirmed(false); // Reseta o estado de confirmação
-    setOrderId(null); // Limpa o ID do pedido
-    setPaymentData(initialPaymentState); // Reseta os dados do pagamento
-    onClose(); // Chama a função onClose para fechar o carrinho
+    setOrderConfirmed(false);
+    setOrderId(''); // Reseta o ID do pedido
+    onClose(); // Chama a função de fechamento
   };
 
   return (
@@ -197,19 +212,14 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
           </form>
         </>
       ) : (
-        orderId && (
-          <OrderConfirmation
-            orderId={orderId} // Usando o ID gerado
-            onClose={handleCompleteOrder} // Função para fechar a confirmação
-          />
-        )
+        <OrderConfirmation
+          orderId={orderId} // Usando o ID gerado
+          onClose={handleCompleteOrder} // Função para fechar a confirmação
+          handleRemoveAllItems={handleRemoveAllItems} // Passando a função para o componente
+        />
       )}
     </PaymentContainer>
   );
 };
 
 export default PaymentPage;
-
-
-
-
