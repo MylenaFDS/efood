@@ -37,6 +37,7 @@ interface PaymentPageProps {
   }) => void;
   onBackToDelivery: () => void;
   totalAmount: number;
+  onClose: () => void; // Certifique-se de que a propriedade onClose está aqui
 }
 
 const initialPaymentState = {
@@ -55,6 +56,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
   onConfirmPayment,
   onBackToDelivery,
   totalAmount,
+  onClose, // Certifique-se de que onClose é desestruturado aqui
 }) => {
   const [paymentData, setPaymentData] = useState(initialPaymentState);
   const [errorMessage, setErrorMessage] = useState('');
@@ -105,6 +107,7 @@ const PaymentPage: React.FC<PaymentPageProps> = ({
     setOrderConfirmed(false); // Reseta o estado de confirmação
     setOrderId(null); // Limpa o ID do pedido
     setPaymentData(initialPaymentState); // Reseta os dados do pagamento
+    onClose(); // Chama a função onClose para fechar o carrinho
   };
 
   return (

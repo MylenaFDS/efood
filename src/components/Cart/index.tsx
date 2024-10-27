@@ -72,6 +72,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
       })
       .catch((error) => {
         console.error('Erro ao confirmar pagamento:', error);
+        // Aqui você pode definir um errorMessage usando Redux ou um estado local
       });
   };
 
@@ -95,6 +96,7 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
           onConfirmPayment={handleConfirmPayment} 
           onBackToDelivery={() => setIsPaymentPage(false)} 
           totalAmount={totalAmount} 
+          onClose={onClose} // Adiciona esta linha
         />
       ) : isDeliveryPage ? (
         <DeliveryPage 
@@ -142,3 +144,4 @@ const Cart: React.FC<CartProps> = ({ onClose }) => {
 };
 
 export default Cart;
+
