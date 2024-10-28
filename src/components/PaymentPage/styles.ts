@@ -40,6 +40,11 @@ export const Input = styled.input`
   margin: 5px 0 20px 0;
   box-sizing: border-box;
   border: 1px solid ${cores.coral};
+  font-size: 14px;
+font-weight: 700;
+line-height: 16.41px;
+text-align: left;
+color: #4B4B4B;
 `;
 
 export const RowContainer = styled.div`

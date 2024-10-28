@@ -55,8 +55,8 @@ export const ButtonLink = styled(Link)`
 `;
 
 export const AddToCartButton = styled.button`
-  background-color:#fff;
-  color: #e66767;
+  background-color:${cores.creme};
+  color: ${cores.coral};
   border: none;
   width:100%;
   height:24px;

@@ -133,7 +133,7 @@ export const CheckoutButton = styled.button
   height: 24px;
   margin: auto;
   padding: 0;
-  background-color: #fff;
+  background-color:${cores.creme};
   color: ${cores.coral};
   font-size: 14px;
   border: none;

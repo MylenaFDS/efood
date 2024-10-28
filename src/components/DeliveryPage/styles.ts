@@ -69,7 +69,7 @@ export const SubmitButton = styled.button`
   height:24px;
   
   margin-top: 20px;
-  background-color: #fff;
+  background-color:${cores.creme};
   color: ${cores.coral};
   border: none;
   cursor: pointer;
@@ -80,7 +80,7 @@ export const BackButton = styled.button`
   width: 344px;
   height:24px;
   margin-top: 12px;
-  background-color: #fff;
+  background-color:${cores.creme};
   color: ${cores.coral};
   border: none;
   cursor: pointer;
